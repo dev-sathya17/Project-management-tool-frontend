@@ -1,0 +1,205 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f1f5fb;
+}
+
+.brand-emphasis {
+  color: rgb(132, 10, 255);
+}
+
+.header {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  background-color: #fff;
+  box-shadow: 5px 5px 5px rgba(132, 10, 255, 0.1);
+}
+
+.box {
+  background-color: #fff;
+  box-shadow: 5px 5px 5px rgba(132, 10, 255, 0.1);
+  border-radius: 15px;
+}
+
+.icon {
+  font-size: clamp(15px, 18px, 22px);
+}
+
+.logo {
+  font-size: clamp(20px, 30px, 38px);
+}
+
+.main-content {
+  height: 100%;
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+
+.description {
+  width: 50%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  margin-left: 15px;
+  gap: 35px;
+  margin-top: 10px;
+}
+
+.description-text {
+  font-size: clamp(10px, 30px, 40px);
+  line-height: 1.5;
+  padding: 10px;
+}
+
+.merits {
+  margin-left: 5px;
+  padding: 10px;
+}
+
+.merits > li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.merit {
+  font-size: clamp(12px, 15px, 18px);
+}
+
+.footer {
+  padding: 25px 0 15px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  width: 100%;
+  padding-right: 10px;
+}
+
+.button-group {
+  width: 45%;
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+}
+
+.button {
+  all: unset;
+  background-color: rgb(132, 10, 255);
+  width: 70px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+}
+
+.feature-title {
+  font-size: clamp(14px, 25px, 28px);
+  font-weight: 500;
+  height: 45px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.features {
+  width: 48%;
+  padding: 30px 15px;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+.info {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: clamp(8px, 12px, 14px);
+}
+
+.links {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1370px) {
+  .container {
+    overflow: auto;
+  }
+  .description {
+    width: 100%;
+  }
+  .features {
+    width: 100%;
+  }
+  .button-group {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    overflow: auto;
+  }
+  .header {
+    justify-content: center;
+  }
+  .description-text {
+    font-size: 26px;
+  }
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .description {
+    width: 90%;
+  }
+  .features {
+    width: 100%;
+    padding-top: 15px;
+    justify-content: center;
+    margin-right: 0;
+  }
+  .button-group {
+    width: 100%;
+  }
+  .button {
+    width: 50px;
+    font-size: 11px;
+  }
+  .info {
+    margin-top: 0;
+  }
+  .feature-title {
+    font-size: 18px;
+  }
+  .nav-text {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .description-text {
+    font-size: 20px;
+  }
+}

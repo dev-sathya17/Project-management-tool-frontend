@@ -1,0 +1,38 @@
+.feature-card {
+  display: flex;
+  gap: 15px;
+  border-radius: 5px;
+  padding: 15px;
+  align-items: center;
+  height: 55px;
+  background-color: #fff;
+  box-shadow: 5px 5px 5px rgba(132, 10, 255, 0.1);
+}
+
+.feature-icon {
+  font-size: 20px;
+  height: 100%;
+  color: rgb(132, 10, 255);
+}
+
+.text {
+  height: 100%;
+}
+
+@media screen and (max-width: 1250px) {
+  .feature-card {
+    height: auto;
+  }
+  .text {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .feature-card {
+    height: auto;
+  }
+  .text {
+    font-size: 14px;
+  }
+}
