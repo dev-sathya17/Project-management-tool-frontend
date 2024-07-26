@@ -6,6 +6,11 @@ const userService = {
   checkAuthentication: async () => {
     return await instance.get("/users/checkAuth");
   },
+
+  // Service to register a new user
+  registerUser: async (userData) => {
+    return await instance.post("/users", userData);
+  },
 };
 
 // Exporting the user service

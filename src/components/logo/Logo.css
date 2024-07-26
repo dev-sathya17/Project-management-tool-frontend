@@ -1,5 +1,5 @@
 .brand-emphasis {
-  color: rgb(132, 10, 255);
+  color: var(--accent);
 }
 
 .logo {

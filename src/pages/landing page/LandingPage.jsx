@@ -6,7 +6,14 @@ import { FaChartPie } from "react-icons/fa6";
 import { features } from "../../data/features";
 import FeatureCard from "../../components/featureCard/FeatureCard";
 import Logo from "../../components/logo/Logo";
+import { useNavigate } from "react-router-dom";
 const LandingPage = () => {
+  const navigate = useNavigate();
+
+  const handleClick = (page) => {
+    navigate(page);
+  };
+
   return (
     <div className="container">
       <header className="header">
@@ -45,11 +52,21 @@ const LandingPage = () => {
             <div className="button-group">
               <div className="button-container">
                 <h3 className="nav-text">Join Us Today!</h3>
-                <button className="button">Sign Up</button>
+                <button
+                  className="button"
+                  onClick={() => handleClick("/register")}
+                >
+                  Sign Up
+                </button>
               </div>
               <div className="button-container">
                 <h3 className="nav-text">Already a member?</h3>
-                <button className="button">Sign In</button>
+                <button
+                  className="button"
+                  onClick={() => handleClick("/login")}
+                >
+                  Sign In
+                </button>
               </div>
             </div>
             <div className="info">

@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: #f1f5fb;
+  background-color: var(--background);
 }
 
 .header {
@@ -11,12 +11,12 @@
   align-items: center;
   justify-content: flex-start;
   gap: 5px;
-  background-color: #fff;
+  background-color: var(--white);
   box-shadow: 5px 5px 5px rgba(132, 10, 255, 0.1);
 }
 
 .box {
-  background-color: #fff;
+  background-color: var(--white);
   box-shadow: 5px 5px 5px rgba(132, 10, 255, 0.1);
   border-radius: 15px;
 }
@@ -28,7 +28,6 @@
 .main-content {
   height: 100%;
   display: flex;
-  /* flex-wrap: wrap; */
 }
 
 .description {
@@ -91,13 +90,13 @@
 
 .button {
   all: unset;
-  background-color: rgb(132, 10, 255);
+  background-color: var(--accent);
   width: 70px;
   padding: 5px;
   text-align: center;
   border-radius: 5px;
   cursor: pointer;
-  color: #fff;
+  color: var(--white);
   font-weight: 500;
 }
 
@@ -130,7 +129,7 @@
 
 .links {
   text-decoration: underline;
-  color: blue;
+  color: var(--blue);
   cursor: pointer;
 }
 

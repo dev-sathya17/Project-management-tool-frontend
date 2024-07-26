@@ -2,7 +2,6 @@ import { Navigate, Outlet, useLoaderData } from "react-router-dom";
 
 const AuthenticatedRoute = () => {
   const isAuthenticated = useLoaderData();
-  console.log(isAuthenticated);
 
   return isAuthenticated ? (
     Navigate({ to: "/dashboard", replace: true })
