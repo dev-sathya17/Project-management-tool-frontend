@@ -1,19 +1,16 @@
 import "./LandingPage.css";
-import { PiChartLineUpBold } from "react-icons/pi";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
 import { MdAccessAlarm } from "react-icons/md";
 import { FaTasks } from "react-icons/fa";
 import { FaChartPie } from "react-icons/fa6";
 import { features } from "../../data/features";
 import FeatureCard from "../../components/featureCard/FeatureCard";
+import Logo from "../../components/logo/Logo";
 const LandingPage = () => {
   return (
     <div className="container">
       <header className="header">
-        <PiChartLineUpBold className="logo" />
-        <h2 className="title">
-          <span className="brand-emphasis">Pro</span>-Manager
-        </h2>
+        <Logo />
       </header>
       <main className="main-content">
         <section className="description">

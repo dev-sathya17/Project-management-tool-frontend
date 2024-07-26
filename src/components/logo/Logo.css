@@ -1,0 +1,7 @@
+.brand-emphasis {
+  color: rgb(132, 10, 255);
+}
+
+.logo {
+  font-size: clamp(20px, 30px, 38px);
+}
