@@ -1,0 +1,30 @@
+.pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--accent);
+  width: 90%;
+  gap: 20px;
+  border-radius: 15px;
+  padding: 10px;
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-icon {
+  all: unset;
+  color: var(--white);
+  font-size: 20px;
+  margin: 0;
+}
+
+.pill:hover {
+  background-color: var(--accent-dark);
+}
+
+@media screen and (max-width: 1005px) {
+  .pill-title {
+    display: none;
+  }
+}

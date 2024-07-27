@@ -1,0 +1,85 @@
+.sidebar-container {
+  width: 25%;
+  background-color: var(--white);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  justify-content: space-between;
+  box-shadow: 5px 5px 5px rgba(132, 10, 255, 0.1);
+}
+
+.sidebar-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.sidebar-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 70%;
+  border: 5px solid var(--background);
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  padding: 20px 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-footer {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile {
+  width: 60px;
+  height: 60px;
+  background-color: var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.logout-btn {
+  width: 80%;
+  padding: 5px;
+  background-color: var(--accent);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: var(--accent-dark);
+}

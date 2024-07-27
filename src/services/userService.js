@@ -18,6 +18,11 @@ const userService = {
       withCredentials: true,
     });
   },
+
+  // Service to fetch projects of the user
+  fetchProjects: async () => {
+    return await protectedInstance.get("/projects");
+  },
 };
 
 // Exporting the user service

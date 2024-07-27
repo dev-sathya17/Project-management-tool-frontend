@@ -4,7 +4,7 @@ const Logo = () => {
   return (
     <>
       <PiChartLineUpBold className="logo" />
-      <h2>
+      <h2 className="brand-title">
         <span className="brand-emphasis">Pro</span>-Manager
       </h2>
     </>

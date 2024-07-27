@@ -38,6 +38,7 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <TeamLeaderDashboard />,
+        loader: userLoader.getProjects,
       },
       {
         path: "*",

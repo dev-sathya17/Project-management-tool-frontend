@@ -5,3 +5,9 @@
 .logo {
   font-size: clamp(20px, 30px, 38px);
 }
+
+@media screen and (max-width: 1005px) {
+  .brand-title {
+    display: none;
+  }
+}

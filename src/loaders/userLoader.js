@@ -11,6 +11,16 @@ const userLoader = {
       return { isAuthenticated: false, role: null };
     }
   },
+
+  getProjects: async () => {
+    try {
+      const response = await userService.fetchProjects();
+      return response.data;
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
+  },
 };
 
 // Exporting the user loader object
