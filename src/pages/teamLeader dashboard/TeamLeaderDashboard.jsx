@@ -1,5 +1,9 @@
 const TeamLeaderDashboard = () => {
-  return <div>TeamLeaderDashboard</div>;
+  return (
+    <div>
+      <h1>Hello</h1>
+    </div>
+  );
 };
 
 export default TeamLeaderDashboard;

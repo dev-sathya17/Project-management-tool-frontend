@@ -1,10 +1,10 @@
-import { instance } from "./instance";
+import { instance, protectedInstance } from "./instance";
 
 // Creating a user service object
 const userService = {
   // Service to check user Authentication
   checkAuthentication: async () => {
-    return await instance.get("/users/checkAuth");
+    return await protectedInstance.get("/users/checkAuth");
   },
 
   // Service to register a new user
@@ -14,7 +14,6 @@ const userService = {
 
   // Service to login a user
   login: async (userData) => {
-    console.log(userData);
     return await instance.post("/users/login", userData, {
       withCredentials: true,
     });

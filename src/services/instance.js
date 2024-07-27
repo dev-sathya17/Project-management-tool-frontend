@@ -12,4 +12,14 @@ const instance = axios.create({
   timeout: 5000,
 });
 
-export { instance };
+// Creating a protected axios instance for authenticated users
+const protectedInstance = axios.create({
+  baseURL,
+  timeout: 5000,
+  headers: {
+    "Content-Type": "application/json",
+  },
+  withCredentials: true,
+});
+
+export { instance, protectedInstance };

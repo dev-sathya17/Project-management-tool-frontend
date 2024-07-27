@@ -7,6 +7,9 @@ import LoginPage from "../pages/login/LoginPage";
 import TeamLeaderDashboard from "../pages/teamLeader dashboard/TeamLeaderDashboard";
 import EmployeeDashboard from "../pages/employee dashboard/EmployeeDashboard";
 import AdminDashboard from "../pages/admin dashboard/AdminDashboard";
+import ProtectedRoute from "./ProtectedRoute";
+import NotFound from "../pages/not found/NotFound";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,22 +28,50 @@ const router = createBrowserRouter([
         path: "login",
         element: <LoginPage />,
       },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: <ProtectedRoute />,
+    loader: userLoader.checkAuth,
+    children: [
+      {
+        path: "",
+        element: <TeamLeaderDashboard />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
+    ],
+  },
+  {
+    path: "admin",
+    element: <ProtectedRoute />,
+    loader: userLoader.checkAuth,
+    children: [
       {
         path: "dashboard",
-        children: [
-          {
-            path: "employee",
-            element: <EmployeeDashboard />,
-          },
-          {
-            path: "teamleader",
-            element: <TeamLeaderDashboard />,
-          },
-          {
-            path: "admin",
-            element: <AdminDashboard />,
-          },
-        ],
+        element: <AdminDashboard />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
+    ],
+  },
+  {
+    path: "employee",
+    element: <ProtectedRoute />,
+    loader: userLoader.checkAuth,
+    children: [
+      {
+        path: "dashboard",
+        element: <EmployeeDashboard />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },

@@ -38,17 +38,17 @@ const LoginPage = () => {
       userService
         .login(formik.values)
         .then((response) => {
-          console.log(response);
           if (response.status === 200) {
             alert(response.data.message);
             formik.resetForm();
             if (response.data.user.role === "employee") {
-              navigate("/dashboard/employee");
+              navigate("/employee/dashboard");
             } else if (response.data.user.role === "teamLeader") {
-              navigate("/dashboard/teamleader");
+              navigate("/dashboard");
             } else if (response.data.user.role === "admin") {
-              navigate("/dashboard/admin");
+              navigate("/admin/dashboard");
             }
+            // navigate("/dashboard");
           }
         })
         .catch((error) => {

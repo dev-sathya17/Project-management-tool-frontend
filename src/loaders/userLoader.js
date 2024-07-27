@@ -4,11 +4,11 @@ import userService from "../services/userService";
 const userLoader = {
   checkAuth: async () => {
     try {
-      await userService.checkAuthentication();
-      return true;
+      const response = await userService.checkAuthentication();
+      return { isAuthenticated: true, role: response.data.role };
     } catch (error) {
       console.log(error);
-      return false;
+      return { isAuthenticated: false, role: null };
     }
   },
 };
