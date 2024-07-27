@@ -1,0 +1,86 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.error-message {
+  color: red;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.highlight-header {
+  color: var(--accent);
+}
+
+.eye-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.email-input {
+  margin-right: 40px;
+}
+
+.input-container-login {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.input-container-login > input {
+  margin-left: auto;
+}
+
+.button-error {
+  width: 80%;
+  border: none;
+  outline: none;
+  height: 2.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(86, 86, 86);
+  color: whitesmoke;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .icon,
+  .eye-icon {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .icon,
+  .eye-icon {
+    font-size: 24px;
+  }
+}

@@ -2,6 +2,7 @@ import "./RegisterPage.css";
 import Logo from "../../components/logo/Logo";
 import { useFormik } from "formik";
 import userService from "../../services/userService";
+import { Link } from "react-router-dom";
 
 const validate = (values) => {
   const errors = {};
@@ -235,7 +236,10 @@ const RegisterPage = () => {
               REGISTER
             </button>
             <p className="align-center login-nav">
-              Already have an account? <span className="link">Sign In</span>
+              Already have an account?{" "}
+              <Link to="/login" className="link">
+                Sign In
+              </Link>
             </p>
           </form>
         </div>

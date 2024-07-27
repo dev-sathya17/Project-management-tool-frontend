@@ -21,6 +21,7 @@
   padding: 15px;
   border-radius: 15px;
   margin: 50px 0;
+  box-shadow: 8px 5px 5px rgba(132, 10, 255, 0.1);
 }
 
 .highlight {
