@@ -1,8 +1,7 @@
 import { Navigate, Outlet, useLoaderData } from "react-router-dom";
 
 const ProtectedRoute = () => {
-  const { isAuthenticated, role } = useLoaderData();
-  console.log(isAuthenticated, role);
+  const { isAuthenticated } = useLoaderData();
 
   return isAuthenticated ? (
     <Outlet />

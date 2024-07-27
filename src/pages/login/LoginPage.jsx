@@ -8,6 +8,7 @@ import { IoMdEye } from "react-icons/io";
 import { IoMdEyeOff } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../components/logo/Logo";
+import { useUser } from "../../contexts/UserContext";
 
 const validate = (values) => {
   const errors = {};
@@ -27,6 +28,7 @@ const validate = (values) => {
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const { setUser } = useUser();
 
   const formik = useFormik({
     initialValues: {
@@ -39,6 +41,7 @@ const LoginPage = () => {
         .login(formik.values)
         .then((response) => {
           if (response.status === 200) {
+            setUser(response.data.user);
             alert(response.data.message);
             formik.resetForm();
             if (response.data.user.role === "employee") {
