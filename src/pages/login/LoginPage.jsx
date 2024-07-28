@@ -69,8 +69,8 @@ const LoginPage = () => {
       <header className="header">
         <Logo />
       </header>
-      <div className="wrapper">
-        <form className="form-container" onSubmit={formik.handleSubmit}>
+      <div className="login-wrapper">
+        <form className="login-form-container" onSubmit={formik.handleSubmit}>
           <div className="title-container">
             <h2 className="title">
               Welcome <span className="highlight-header">back!</span>
@@ -84,7 +84,7 @@ const LoginPage = () => {
           </div>
 
           <div className="input-container-login">
-            <MdEmail className="icon" />
+            <MdEmail className="login-icon" />
             <input
               type="email"
               name="email"
@@ -101,7 +101,7 @@ const LoginPage = () => {
             <></>
           )}
           <div className="input-container-login">
-            <FaLock className="icon" />
+            <FaLock className="login-icon" />
             <input
               type={showPassword ? "text" : "password"}
               name="password"
@@ -112,9 +112,9 @@ const LoginPage = () => {
               className="input"
             />
             {showPassword ? (
-              <IoMdEye className="eye-icon" onClick={togglePassword} />
+              <IoMdEye className="login-eye-icon" onClick={togglePassword} />
             ) : (
-              <IoMdEyeOff className="eye-icon" onClick={togglePassword} />
+              <IoMdEyeOff className="login-eye-icon" onClick={togglePassword} />
             )}
           </div>
           {formik.errors.password ? (

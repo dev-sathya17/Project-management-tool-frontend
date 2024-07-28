@@ -1,11 +1,8 @@
 import "./Sidebar.css";
-import Logo from "../logo/Logo";
+import Switch from "../switch/Switch";
 const Sidebar = ({ children }) => {
   return (
     <div className="sidebar-container">
-      <header className="sidebar-header">
-        <Logo />
-      </header>
       <main className="sidebar-main">{children}</main>
       <footer className="sidebar-footer">
         <div className="profile-container">

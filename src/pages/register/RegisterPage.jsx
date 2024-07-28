@@ -76,10 +76,12 @@ const RegisterPage = () => {
   });
 
   return (
-    <div className="container">
-      <header className="header">
-        <Logo />
-      </header>
+    <div className="reg-container">
+      <div className="reg-header">
+        <header className="header">
+          <Logo />
+        </header>
+      </div>
       <div className="wrapper">
         <div className="form-container">
           <h2 className="form-title">
@@ -105,7 +107,7 @@ const RegisterPage = () => {
                   onBlur={formik.handleBlur}
                 />
                 {formik.touched.firstName && formik.errors.firstName ? (
-                  <div className="error">{formik.errors.firstName}</div>
+                  <span className="error">{formik.errors.firstName}</span>
                 ) : null}
               </div>
 

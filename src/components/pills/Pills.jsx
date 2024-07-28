@@ -1,6 +1,6 @@
 import "./Pills.css";
 import { IoMdAdd } from "react-icons/io";
-const Pills = ({ index, title, type }) => {
+const Pills = ({ title, type }) => {
   return (
     <div className="pill">
       {type === "add" ? (
@@ -12,7 +12,6 @@ const Pills = ({ index, title, type }) => {
         </>
       ) : (
         <>
-          <span>{index}</span>
           <p className="pill-title">{title}</p>
         </>
       )}

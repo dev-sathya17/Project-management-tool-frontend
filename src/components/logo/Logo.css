@@ -1,13 +1,10 @@
-.brand-emphasis {
-  color: var(--accent);
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
 }
 
 .logo {
-  font-size: clamp(20px, 30px, 38px);
-}
-
-@media screen and (max-width: 1005px) {
-  .brand-title {
-    display: none;
-  }
+  font-size: 24px;
 }

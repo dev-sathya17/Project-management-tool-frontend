@@ -11,8 +11,18 @@
   --background: #f1f5fb;
   --white: #fff;
   --black: #000;
-  --accent: rgb(132, 10, 255);
+  --accent: #840aff;
   --blue: blue;
   --red: red;
   --accent-dark: rgb(67, 0, 135);
+}
+
+[data-theme="dark"] {
+  --background: #1c1c1c;
+  --white: #000000;
+  --black: #ffffff;
+  --accent: #840aff;
+  --blue: blue;
+  --red: red;
+  --accent-dark: rgb(194, 133, 255);
 }

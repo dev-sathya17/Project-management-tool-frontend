@@ -1,0 +1,6 @@
+.switch {
+  all: unset;
+  background-color: var(--accent);
+  padding: 5px;
+  border-radius: 15px;
+}
