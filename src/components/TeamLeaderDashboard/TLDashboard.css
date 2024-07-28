@@ -22,16 +22,73 @@
   background-color: var(--white);
   border-radius: 15px;
   width: 350px;
-  /* width: 100%; */
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 350px;
+  transition: 0.3s ease;
+}
+
+.tld-col:not(:last-child):hover,
+.tld-box-col:hover {
+  transform: scale(1.05);
 }
 
 .tld-graph {
   width: 450px;
+}
+
+.risk-title,
+.task-header,
+.tld-reports-header,
+.tld-project-header {
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid var(--gray-light);
+}
+
+.risk-value,
+.task-value {
+  font-size: 72px;
+}
+
+.tld-task {
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.task-description {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.tld-risk {
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  box-shadow: 0px 0px 15px #0f0;
+}
+
+.tld-reports,
+.tld-project {
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.tld-reports-description,
+.tld-project-description {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.tld-report-icon,
+.tld-project-icon {
+  font-size: 72px;
 }
 
 .tld-box {
@@ -51,6 +108,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.3s ease;
+}
+
+.tld-deadline,
+.tld-user-management {
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.tld-deadline-header,
+.tld-team-header {
+  font-size: 20px;
+}
+
+.tld-user-management {
+  cursor: pointer;
+}
+
+.tld-deadline-value {
+  font-size: 48px;
+}
+
+.tld-team-icon {
+  font-size: 36px;
+}
+
+.tld-deadline-description {
+  text-align: center;
+  font-size: 14px;
 }
 
 @media screen and (max-width: 768px) {

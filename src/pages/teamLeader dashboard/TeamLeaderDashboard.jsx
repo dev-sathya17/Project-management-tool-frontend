@@ -6,34 +6,19 @@ import "./dashboard.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Logo from "../../components/logo/Logo";
 import { RxCross1 } from "react-icons/rx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TLDashboard from "../../components/TeamLeaderDashboard/TLDashboard";
 import { FaBell } from "react-icons/fa6";
 import NotificationPanel from "../../components/notifications/NotificationPanel";
 import userService from "../../services/userService";
 
 const TeamLeaderDashboard = () => {
-  const [view, setView] = useState(false);
-  const [showNotifications, setShowNotifications] = useState(false);
-  const navigate = useNavigate();
-
   const data = useLoaderData();
 
-  const projects = [
-    ...data,
-    ...data,
-    ...data,
-    ...data,
-    ...data,
-    ...data,
-    ...data,
-    { title: "Add project", type: "add" },
-  ];
-
-  const cardData = {
-    title: "Risk Percentage",
-    description: "59%",
-  };
+  const [view, setView] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
+  const [project, setProject] = useState(data[0]);
+  const navigate = useNavigate();
 
   const { user } = useUser();
   console.log(user);
@@ -64,6 +49,10 @@ const TeamLeaderDashboard = () => {
     }
   };
 
+  const handleSelectProject = (project) => {
+    setProject(project);
+  };
+
   return (
     <div className="dashboard-wrapper">
       <div className="dashboard-sidebar-desk">
@@ -73,8 +62,13 @@ const TeamLeaderDashboard = () => {
           {showNotifications && <NotificationPanel />}
         </header>
         <Sidebar handleClick={handleLogout}>
-          {projects.map((project, index) => (
-            <Pills title={project.title} type={project.type} key={index} />
+          {data.map((project, index) => (
+            <Pills
+              project={project}
+              type={project.type}
+              key={index}
+              handleClick={handleSelectProject}
+            />
           ))}
         </Sidebar>
       </div>
@@ -92,7 +86,7 @@ const TeamLeaderDashboard = () => {
         {view && (
           <div className="scroll-sidebar">
             <Sidebar handleClick={handleLogout}>
-              {projects.map((project, index) => (
+              {data.map((project, index) => (
                 <Pills title={project.title} type={project.type} key={index} />
               ))}
             </Sidebar>
