@@ -14,7 +14,12 @@
   --accent: #840aff;
   --blue: blue;
   --red: red;
-  --accent-dark: rgb(67, 0, 135);
+  --accent-dark: #430087;
+  --sky: #008cff;
+  --disable: #656565;
+  --primary: #333333;
+  --gray: #777777;
+  --gray-dark: #555555;
 }
 
 [data-theme="dark"] {
@@ -24,5 +29,9 @@
   --accent: #840aff;
   --blue: blue;
   --red: red;
-  --accent-dark: rgb(194, 133, 255);
+  --accent-dark: #c285ff;
+  --sky: #008cff;
+  --disable: #a1a1a1;
+  --gray: #777777;
+  --gray-dark: #555555;
 }

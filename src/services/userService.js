@@ -28,6 +28,21 @@ const userService = {
   logout: async () => {
     return await protectedInstance.get("/users/logout");
   },
+
+  // Service to send an email for password reset verification
+  forgotPassword: async (email) => {
+    return await instance.post("/users/forgot", { email });
+  },
+
+  // Service to verify auth string
+  verify: async (authString) => {
+    return await instance.get(`/users/verify/${authString}`);
+  },
+
+  // Service to reset user password
+  reset: async (email, password) => {
+    return await instance.post("/users/reset", { email, password });
+  },
 };
 
 // Exporting the user service

@@ -2,7 +2,6 @@ import { Navigate, Outlet, useLoaderData } from "react-router-dom";
 
 const AuthenticatedRoute = () => {
   const { isAuthenticated, role } = useLoaderData();
-  console.log(isAuthenticated, role);
 
   if (isAuthenticated) {
     if (role === "admin") {

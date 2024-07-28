@@ -9,6 +9,8 @@ import EmployeeDashboard from "../pages/employee dashboard/EmployeeDashboard";
 import AdminDashboard from "../pages/admin dashboard/AdminDashboard";
 import ProtectedRoute from "./ProtectedRoute";
 import NotFound from "../pages/not found/NotFound";
+import ForgotPassword from "../pages/forgot password/ForgotPassword";
+import Verify from "../pages/forgot password/Verify";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <LoginPage />,
+      },
+      {
+        path: "/forgot",
+        element: <ForgotPassword />,
+      },
+      {
+        path: "/verify/:authString",
+        element: <Verify />,
       },
     ],
   },
