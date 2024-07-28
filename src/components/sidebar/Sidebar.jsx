@@ -1,6 +1,8 @@
-import "./Sidebar.css";
+import { useUser } from "../../contexts/UserContext";
 import Switch from "../switch/Switch";
-const Sidebar = ({ children }) => {
+import "./Sidebar.css";
+const Sidebar = ({ children, handleClick }) => {
+  const { user } = useUser();
   return (
     <div className="sidebar-container">
       <main className="sidebar-main">{children}</main>
@@ -11,9 +13,14 @@ const Sidebar = ({ children }) => {
             alt="Profile picture"
             className="profile"
           />
-          <h3>Hello, User Name</h3>
+          <h3 className="sidebar-user-name">
+            Hello, {user ? user.firstName : "User"}
+          </h3>
         </div>
-        <button className="logout-btn">LOGOUT</button>
+        <Switch />
+        <button className="logout-btn" onClick={handleClick}>
+          LOGOUT
+        </button>
       </footer>
     </div>
   );

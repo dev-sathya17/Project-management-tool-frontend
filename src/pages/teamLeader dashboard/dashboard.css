@@ -12,9 +12,15 @@
 .sidebar-header {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 15px;
+  padding: 0 15px;
+}
+
+.bell-icon {
+  font-size: 22px;
+  cursor: pointer;
 }
 
 .dashboard-container {
@@ -37,6 +43,7 @@
   }
   .dashboard-container {
     width: 100%;
+    margin-top: 100px;
   }
   .dashboard-sidebar-mob {
     display: flex;
@@ -46,7 +53,6 @@
     z-index: 999;
     flex-direction: column;
     overflow: scroll;
-    /* justify-content: space-between; */
   }
   .dashboard-wrapper {
     flex-direction: column;
@@ -57,7 +63,6 @@
     align-items: center;
     width: 100%;
     padding: 3%;
-    border: 2px solid red;
   }
   .ham-menu {
     font-size: 30px;

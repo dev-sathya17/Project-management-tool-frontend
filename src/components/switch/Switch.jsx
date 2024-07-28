@@ -1,5 +1,7 @@
 import { useTheme } from "../../contexts/ThemeContext";
 import "./Switch.css";
+import { IoMoon } from "react-icons/io5";
+import { IoSunnyOutline } from "react-icons/io5";
 
 const Switch = () => {
   const { theme, toggleTheme } = useTheme();
@@ -7,7 +9,7 @@ const Switch = () => {
   return (
     <>
       <button onClick={toggleTheme} className="switch">
-        Switch to {theme === "light" ? "dark" : "light"} mode
+        {theme === "light" ? <IoMoon /> : <IoSunnyOutline />}
       </button>
     </>
   );

@@ -128,15 +128,15 @@ const LoginPage = () => {
             </button>
             <p>
               Forgot Password?{" "}
-              <span className="link">
-                <Link to="/forgot">Click Here</Link>
-              </span>
+              <Link className="link" to="/forgot">
+                Click Here
+              </Link>
             </p>
             <p>
               Do not have an Account?{" "}
-              <span className="link">
-                <Link to="/register">Sign Up</Link>
-              </span>
+              <Link className="link" to="/register">
+                Sign Up
+              </Link>
             </p>
           </div>
         </form>

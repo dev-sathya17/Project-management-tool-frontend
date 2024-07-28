@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { useUser } from "../../contexts/UserContext";
 import Pills from "../../components/pills/Pills";
@@ -8,22 +8,25 @@ import Logo from "../../components/logo/Logo";
 import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
 import TLDashboard from "../../components/TeamLeaderDashboard/TLDashboard";
-import Switch from "../../components/switch/Switch";
+import { FaBell } from "react-icons/fa6";
+import NotificationPanel from "../../components/notifications/NotificationPanel";
+import userService from "../../services/userService";
 
 const TeamLeaderDashboard = () => {
   const [view, setView] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
+  const navigate = useNavigate();
 
   const data = useLoaderData();
-  const sortedData = data.sort();
-  console.log(sortedData);
+
   const projects = [
-    ...sortedData,
-    ...sortedData,
-    ...sortedData,
-    ...sortedData,
-    ...sortedData,
-    ...sortedData,
-    ...sortedData,
+    ...data,
+    ...data,
+    ...data,
+    ...data,
+    ...data,
+    ...data,
+    ...data,
     { title: "Add project", type: "add" },
   ];
 
@@ -39,14 +42,37 @@ const TeamLeaderDashboard = () => {
     setView(!view);
   };
 
+  const handleToggleNotifications = () => {
+    setShowNotifications(!showNotifications);
+  };
+
+  const handleLogout = () => {
+    const choice = confirm("Are you sure you want to log out");
+    if (choice) {
+      userService
+        .logout()
+        .then((response) => {
+          console.log(response.data);
+          if (response.status === 200) {
+            alert("Logged out successfully");
+            navigate("/login");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  };
+
   return (
     <div className="dashboard-wrapper">
       <div className="dashboard-sidebar-desk">
-        <Switch />
         <header className="sidebar-header">
           <Logo />
+          <FaBell className="bell-icon" onClick={handleToggleNotifications} />
+          {showNotifications && <NotificationPanel />}
         </header>
-        <Sidebar>
+        <Sidebar handleClick={handleLogout}>
           {projects.map((project, index) => (
             <Pills title={project.title} type={project.type} key={index} />
           ))}
@@ -55,6 +81,8 @@ const TeamLeaderDashboard = () => {
       <div className="dashboard-sidebar-mob">
         <div className="nav-mobile">
           <Logo />
+          <FaBell className="bell-icon" onClick={handleToggleNotifications} />
+          {showNotifications && <NotificationPanel />}
           {view ? (
             <RxCross1 onClick={handleToggle} />
           ) : (
@@ -63,7 +91,7 @@ const TeamLeaderDashboard = () => {
         </div>
         {view && (
           <div className="scroll-sidebar">
-            <Sidebar>
+            <Sidebar handleClick={handleLogout}>
               {projects.map((project, index) => (
                 <Pills title={project.title} type={project.type} key={index} />
               ))}

@@ -1,6 +1,7 @@
 .switch {
   all: unset;
-  background-color: var(--accent);
-  padding: 5px;
   border-radius: 15px;
+  color: var(--black);
+  font-size: 24px;
+  cursor: pointer;
 }

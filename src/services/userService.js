@@ -23,6 +23,11 @@ const userService = {
   fetchProjects: async () => {
     return await protectedInstance.get("/projects");
   },
+
+  // Service to logout user
+  logout: async () => {
+    return await protectedInstance.get("/users/logout");
+  },
 };
 
 // Exporting the user service

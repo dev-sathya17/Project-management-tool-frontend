@@ -1,0 +1,8 @@
+.notification-panel {
+  position: absolute;
+  z-index: 10;
+  background-color: var(--white);
+  padding: 10px;
+  border-radius: 20px;
+  left: 300px;
+}
