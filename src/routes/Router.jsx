@@ -11,6 +11,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import NotFound from "../pages/not found/NotFound";
 import ForgotPassword from "../pages/forgot password/ForgotPassword";
 import Verify from "../pages/forgot password/Verify";
+import Profile from "../pages/profile/Profile";
 
 const router = createBrowserRouter([
   {
@@ -41,18 +42,22 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "dashboard",
+    path: "auth",
     element: <ProtectedRoute />,
     loader: userLoader.checkAuth,
     children: [
       {
-        path: "",
+        path: "dashboard",
         element: <TeamLeaderDashboard />,
         loader: userLoader.getProjects,
       },
       {
         path: "*",
         element: <NotFound />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
       },
     ],
   },

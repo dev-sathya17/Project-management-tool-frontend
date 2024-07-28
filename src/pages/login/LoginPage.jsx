@@ -45,11 +45,11 @@ const LoginPage = () => {
             alert(response.data.message);
             formik.resetForm();
             if (response.data.user.role === "employee") {
-              navigate("/employee/dashboard");
+              navigate("/auth/employee/dashboard");
             } else if (response.data.user.role === "teamLeader") {
-              navigate("/dashboard");
+              navigate("/auth/dashboard");
             } else if (response.data.user.role === "admin") {
-              navigate("/admin/dashboard");
+              navigate("auth/admin/dashboard");
             }
             // navigate("/dashboard");
           }

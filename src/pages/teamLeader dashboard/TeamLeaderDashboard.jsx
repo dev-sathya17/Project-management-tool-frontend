@@ -31,6 +31,10 @@ const TeamLeaderDashboard = () => {
     setShowNotifications(!showNotifications);
   };
 
+  const handleProfileView = () => {
+    navigate(`/auth/profile`);
+  };
+
   const handleLogout = () => {
     const choice = confirm("Are you sure you want to log out");
     if (choice) {
@@ -61,7 +65,10 @@ const TeamLeaderDashboard = () => {
           <FaBell className="bell-icon" onClick={handleToggleNotifications} />
           {showNotifications && <NotificationPanel />}
         </header>
-        <Sidebar handleClick={handleLogout}>
+        <Sidebar
+          handleClick={handleLogout}
+          handleProfileView={handleProfileView}
+        >
           {data.map((project, index) => (
             <Pills
               project={project}
@@ -85,9 +92,17 @@ const TeamLeaderDashboard = () => {
         </div>
         {view && (
           <div className="scroll-sidebar">
-            <Sidebar handleClick={handleLogout}>
+            <Sidebar
+              handleClick={handleLogout}
+              handleProfileView={handleProfileView}
+            >
               {data.map((project, index) => (
-                <Pills title={project.title} type={project.type} key={index} />
+                <Pills
+                  project={project}
+                  type={project.type}
+                  key={index}
+                  handleClick={handleSelectProject}
+                />
               ))}
             </Sidebar>
           </div>

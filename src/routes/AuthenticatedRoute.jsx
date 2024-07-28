@@ -5,11 +5,11 @@ const AuthenticatedRoute = () => {
 
   if (isAuthenticated) {
     if (role === "admin") {
-      return <Navigate to="/admin/dashboard" replace={true} />;
+      return <Navigate to="/auth/admin/dashboard" replace={true} />;
     } else if (role === "employee") {
-      return <Navigate to="/employee/dashboard" replace={true} />;
+      return <Navigate to="/auth/employee/dashboard" replace={true} />;
     } else {
-      return <Navigate to="/dashboard" replace={true} />;
+      return <Navigate to="/auth/dashboard" replace={true} />;
     }
   }
 

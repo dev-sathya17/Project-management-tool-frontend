@@ -1,13 +1,13 @@
 import { useUser } from "../../contexts/UserContext";
 import Switch from "../switch/Switch";
 import "./Sidebar.css";
-const Sidebar = ({ children, handleClick }) => {
+const Sidebar = ({ children, handleClick, handleProfileView }) => {
   const { user } = useUser();
   return (
     <div className="sidebar-container">
       <main className="sidebar-main">{children}</main>
       <footer className="sidebar-footer">
-        <div className="profile-container">
+        <div className="profile-container" onClick={handleProfileView}>
           <img
             src="https://img.freepik.com/premium-photo/graphic-designer-digital-avatar-generative-ai_934475-9292.jpg"
             alt="Profile picture"
