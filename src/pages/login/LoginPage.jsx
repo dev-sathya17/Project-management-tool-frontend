@@ -9,6 +9,7 @@ import { IoMdEyeOff } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../components/logo/Logo";
 import { useUser } from "../../contexts/UserContext";
+import useStorage from "../../hooks/useStorage";
 
 const validate = (values) => {
   const errors = {};
@@ -29,6 +30,7 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const { setUser } = useUser();
+  const { setValueWithStorage } = useStorage();
 
   const formik = useFormik({
     initialValues: {
@@ -42,6 +44,7 @@ const LoginPage = () => {
         .then((response) => {
           if (response.status === 200) {
             setUser(response.data.user);
+            setValueWithStorage("user", JSON.stringify(response.data.user));
             alert(response.data.message);
             formik.resetForm();
             if (response.data.user.role === "employee") {

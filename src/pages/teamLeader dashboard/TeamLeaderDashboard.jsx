@@ -11,6 +11,7 @@ import TLDashboard from "../../components/TeamLeaderDashboard/TLDashboard";
 import { FaBell } from "react-icons/fa6";
 import NotificationPanel from "../../components/notifications/NotificationPanel";
 import userService from "../../services/userService";
+import useStorage from "../../hooks/useStorage";
 
 const TeamLeaderDashboard = () => {
   const data = useLoaderData();
@@ -20,8 +21,15 @@ const TeamLeaderDashboard = () => {
   const [project, setProject] = useState(data[0]);
   const navigate = useNavigate();
 
-  const { user } = useUser();
-  console.log(user);
+  const { user, setUser } = useUser();
+  const { getValueFromStorage, removeValueFromStorage } = useStorage();
+
+  if (!user) {
+    const storedUser = getValueFromStorage("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }
 
   const handleToggle = () => {
     setView(!view);
@@ -44,6 +52,7 @@ const TeamLeaderDashboard = () => {
           console.log(response.data);
           if (response.status === 200) {
             alert("Logged out successfully");
+            removeValueFromStorage("user");
             navigate("/login");
           }
         })

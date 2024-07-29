@@ -20,7 +20,7 @@
 
 .form-container {
   width: 700px;
-  background-color: white;
+  background-color: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,6 +29,7 @@
   padding: 15px;
   border-radius: 15px;
   margin: 50px 0;
+  color: var(--black);
 
   /* box-shadow: 8px 5px 5px rgba(132, 10, 255, 0.1); */
 }

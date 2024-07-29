@@ -28,6 +28,7 @@
   justify-content: center;
   min-height: 350px;
   transition: 0.3s ease;
+  color: var(--black);
 }
 
 .tld-col:not(:last-child):hover,

@@ -13,6 +13,7 @@ import { useRef, useState } from "react";
 import { useUser } from "../../contexts/UserContext";
 import UserModal from "../../components/user modal/UserModal";
 import userService from "../../services/userService";
+import useStorage from "../../hooks/useStorage";
 
 const Profile = () => {
   // const [image, setImage] = useState(null);
@@ -20,11 +21,15 @@ const Profile = () => {
 
   const { user, setUser } = useUser();
 
-  // const [firstName, setFirstName] = useState(user.firstName);
-  // const [lastName, setLastName] = useState(user.lastName);
-  // const [email, setemail] = useState(user.email);
-  // const [mobile, setMobile] = useState("");
-  // const [salary, setSalary] = useState("");
+  const { getValueFromStorage } = useStorage();
+
+  if (!user) {
+    const storedUser = getValueFromStorage("user");
+    console.log(storedUser);
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }
 
   const fileInputRef = useRef(null);
 
