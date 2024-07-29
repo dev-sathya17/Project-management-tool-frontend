@@ -1,0 +1,37 @@
+.column {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 10px;
+  height: 600px;
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.column-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.badge {
+  background-color: var(--accent);
+  padding: 5px 10px;
+  border-radius: 20px;
+  min-width: 30px;
+  min-height: 20px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.column-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--background);
+  padding: 5px;
+  overflow-y: scroll;
+  border-radius: 10px;
+  height: 92%;
+}

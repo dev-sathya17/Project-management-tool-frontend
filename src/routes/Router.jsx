@@ -14,6 +14,7 @@ import Verify from "../pages/forgot password/Verify";
 import Profile from "../pages/profile/Profile";
 import Workspace from "../components/workspace/Workspace";
 import DashboardEmployee from "../components/EmployeeDashboard/DashboardEmployee";
+import taskLoader from "../loaders/taskLoader";
 
 const router = createBrowserRouter([
   {
@@ -94,6 +95,7 @@ const router = createBrowserRouter([
           {
             path: "workspace",
             element: <Workspace />,
+            loader: taskLoader.getTasks,
           },
         ],
       },

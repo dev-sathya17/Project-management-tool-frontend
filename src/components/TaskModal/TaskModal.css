@@ -1,0 +1,89 @@
+.task-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.task-modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slide-down 0.3s ease-out;
+}
+
+.task-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.task-modal-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.task-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.task-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.task-modal-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-modal-section h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.task-modal-section p,
+.task-modal-section ul {
+  margin: 0;
+}
+
+.task-modal-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-modal-section li {
+  margin-bottom: 10px;
+}
+
+.task-modal-icon {
+  margin-right: 8px;
+  color: #555;
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

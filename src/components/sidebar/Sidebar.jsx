@@ -15,13 +15,7 @@ const Sidebar = ({ children, handleClick, handleProfileView }) => {
             onClick={handleProfileView}
           />
           <h3 className="sidebar-user-name">
-            Welcome,{" "}
-            {/* {user
-              ? user.firstName.length > user.lastName.length
-                ? user.lastName
-                : user.firstName
-              : "User"} */}
-            {user.firstName}
+            Welcome, {user && user.firstName}
           </h3>
         </div>
         <Switch />

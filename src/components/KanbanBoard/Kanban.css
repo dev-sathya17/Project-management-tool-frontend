@@ -1,0 +1,15 @@
+.kanban-board {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.kanban-column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: grab;
+  color: var(--black);
+}
