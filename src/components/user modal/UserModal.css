@@ -1,0 +1,83 @@
+/* ModalStyles.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-title {
+  margin-top: 0;
+}
+
+.modal-title {
+  text-align: center;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.modal-form input,
+.modal-form select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  outline: none;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal-actions button:hover {
+  background: var(--accent);
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .modal {
+    padding: 15px;
+  }
+
+  .modal-form input,
+  .modal-form select {
+    padding: 8px;
+  }
+
+  .modal-actions button {
+    padding: 8px 15px;
+  }
+}

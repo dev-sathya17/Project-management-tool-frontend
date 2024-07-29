@@ -43,6 +43,11 @@ const userService = {
   reset: async (email, password) => {
     return await instance.post("/users/reset", { email, password });
   },
+
+  // Service to update user profile
+  updateProfile: async (userData) => {
+    return await protectedInstance.put("/users", userData);
+  },
 };
 
 // Exporting the user service

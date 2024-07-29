@@ -8,16 +8,23 @@ import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
-import { FaCheckCircle } from "react-icons/fa";
 import { FaCamera } from "react-icons/fa";
 import { useRef, useState } from "react";
 import { useUser } from "../../contexts/UserContext";
+import UserModal from "../../components/user modal/UserModal";
+import userService from "../../services/userService";
 
 const Profile = () => {
-  const [isUpdate, setUpdate] = useState(true);
-  const [image, setImage] = useState(null);
+  // const [image, setImage] = useState(null);
+  const [editUser, setEditUser] = useState();
 
-  const { user } = useUser();
+  const { user, setUser } = useUser();
+
+  // const [firstName, setFirstName] = useState(user.firstName);
+  // const [lastName, setLastName] = useState(user.lastName);
+  // const [email, setemail] = useState(user.email);
+  // const [mobile, setMobile] = useState("");
+  // const [salary, setSalary] = useState("");
 
   const fileInputRef = useRef(null);
 
@@ -30,11 +37,43 @@ const Profile = () => {
     if (file) {
       const imageUrl = URL.createObjectURL(file);
       console.log(imageUrl);
-      setImage(imageUrl);
+      // setImage(imageUrl);
     }
   };
 
-  const toggleUpdate = () => setUpdate(!isUpdate);
+  const toggleUpdate = () => setEditUser(user);
+
+  const handleUpdate = (values) => {
+    userService
+      .updateProfile(values)
+      .then((response) => {
+        setUser(response.data.updatedUser);
+        alert("Profile updated successfully");
+        setEditUser(null);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Failed to update profile");
+        setEditUser(null);
+      });
+  };
+
+  const handleDelete = () => {
+    // delete user from database
+    // const choice = confirm("Are you sure you want to delete your profile?");
+    // if (choice) {
+    //   userService
+    //     .deleteProfile()
+    //     .then((response) => {
+    //       setUser(null);
+    //       alert("Profile deleted successfully");
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //       alert("Failed to delete profile");
+    //     });
+    // }
+  };
 
   return (
     <div className="profile-container">
@@ -56,45 +95,22 @@ const Profile = () => {
       <div className="profile-body">
         <div className="profile-row">
           <div className="profile-cell">
-            {isUpdate ? (
-              <FaEdit
-                className="profile-icon edit-icon"
-                onClick={toggleUpdate}
-              />
-            ) : (
-              <FaCheckCircle
-                className="profile-icon submit-icon"
-                onClick={toggleUpdate}
-              />
-            )}
+            <FaEdit className="profile-icon edit-icon" onClick={toggleUpdate} />
 
-            <MdDelete className="profile-icon delete-icon" />
+            <MdDelete
+              className="profile-icon delete-icon"
+              onClick={handleDelete}
+            />
           </div>
         </div>
         <div className="profile-row">
           <div className="profile-cell">
             <FaUser className="profile-icon" />
-            {isUpdate ? (
-              <p className="profile-text">{user.firstName}</p>
-            ) : (
-              <input
-                className="profile-input"
-                type="text"
-                value={user.firstName}
-              />
-            )}
+            <p className="profile-text">{user.firstName}</p>
           </div>
           <div className="profile-cell">
             <FaUser className="profile-icon" />
-            {isUpdate ? (
-              <p className="profile-text">{user.lastName}</p>
-            ) : (
-              <input
-                className="profile-input"
-                type="text"
-                value={user.lastName}
-              />
-            )}
+            <p className="profile-text">{user.lastName}</p>
           </div>
         </div>
         <div className="profile-row">
@@ -112,40 +128,27 @@ const Profile = () => {
           </div>
           <div className="profile-cell">
             <MdEmail className="profile-icon" />
-            {isUpdate ? (
-              <p className="profile-text">{user.email}</p>
-            ) : (
-              <input className="profile-input" type="text" value={user.email} />
-            )}
+            <p className="profile-text">{user.email}</p>
           </div>
         </div>
         <div className="profile-row">
           <div className="profile-cell">
             <FaMobile className="profile-icon" />
-            {isUpdate ? (
-              <p className="profile-text">{user.mobile}</p>
-            ) : (
-              <input
-                className="profile-input"
-                type="text"
-                value={user.mobile}
-              />
-            )}
+            <p className="profile-text">{user.mobile}</p>
           </div>
           <div className="profile-cell">
             <RiMoneyRupeeCircleFill className="profile-icon" />
-            {isUpdate ? (
-              <p className="profile-text">{user.salaryPerMonth}</p>
-            ) : (
-              <input
-                className="profile-input"
-                type="text"
-                value={user.salaryPerMonth}
-              />
-            )}
+            <p className="profile-text">{user.salaryPerMonth}</p>
           </div>
         </div>
       </div>
+      {editUser && (
+        <UserModal
+          user={editUser}
+          onClose={() => setEditUser(null)}
+          onSave={handleUpdate}
+        />
+      )}
     </div>
   );
 };
