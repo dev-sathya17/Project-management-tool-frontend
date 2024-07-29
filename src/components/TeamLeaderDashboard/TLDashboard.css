@@ -70,7 +70,22 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 15px;
-  box-shadow: 0px 0px 15px #0f0;
+}
+
+.tld-risk:hover {
+  transform: scale(1.05);
+}
+
+.risk-low {
+  box-shadow: 0px 0px 15px rgb(113, 255, 113);
+}
+
+.risk-medium {
+  box-shadow: 0px 0px 15px rgb(255, 192, 90);
+}
+
+.risk-high {
+  box-shadow: 0px 0px 15px rgb(255, 86, 86);
 }
 
 .tld-reports,
@@ -82,7 +97,8 @@
 }
 
 .tld-reports-description,
-.tld-project-description {
+.tld-project-description,
+.risk-description {
   text-align: center;
   margin-bottom: 15px;
 }
@@ -129,7 +145,7 @@
 }
 
 .tld-deadline-value {
-  font-size: 48px;
+  font-size: 24px;
 }
 
 .tld-team-icon {

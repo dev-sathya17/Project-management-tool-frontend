@@ -84,7 +84,10 @@ const Profile = () => {
     <div className="profile-container">
       <div className="profile-head">
         <div className="profile-image">
-          <img src={user.image} alt={user.firstName} />
+          <img
+            src={`http:localhost:3000/uploads/${user.image.split("\\")[1]}`}
+            alt={user.firstName}
+          />
         </div>
         <div className="camera-icon">
           <FaCamera onClick={handleIconClick} />

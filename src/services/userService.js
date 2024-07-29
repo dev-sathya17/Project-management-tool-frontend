@@ -21,7 +21,7 @@ const userService = {
 
   // Service to fetch projects of the user
   fetchProjects: async () => {
-    return await protectedInstance.get("/projects");
+    return await protectedInstance.get("/users/projects");
   },
 
   // Service to logout user

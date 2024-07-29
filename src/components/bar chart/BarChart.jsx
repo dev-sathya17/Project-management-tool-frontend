@@ -7,17 +7,7 @@ import {
   BarChart,
 } from "recharts";
 
-const BarChartComponent = () => {
-  const data = [
-    { date: "6d ago", value: "6" },
-    { date: "5d ago", value: "7" },
-    { date: "7d ago", value: "4" },
-    { date: "3d ago", value: "5" },
-    { date: "4d ago", value: "2" },
-    { date: "1d ago", value: "3" },
-    { date: "2d ago", value: "1" },
-  ];
-
+const BarChartComponent = ({ data }) => {
   return (
     <ResponsiveContainer width={"100%"} height={"100%"}>
       <BarChart data={data} width={48} height={48}>

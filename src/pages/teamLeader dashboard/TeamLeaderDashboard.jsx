@@ -14,11 +14,11 @@ import userService from "../../services/userService";
 import useStorage from "../../hooks/useStorage";
 
 const TeamLeaderDashboard = () => {
-  const data = useLoaderData();
+  const { projects } = useLoaderData();
 
   const [view, setView] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
-  const [project, setProject] = useState(data[0]);
+  const [project, setProject] = useState(projects[0]);
   const navigate = useNavigate();
 
   const { user, setUser } = useUser();
@@ -78,7 +78,7 @@ const TeamLeaderDashboard = () => {
           handleClick={handleLogout}
           handleProfileView={handleProfileView}
         >
-          {data.map((project, index) => (
+          {projects.map((project, index) => (
             <Pills
               project={project}
               type={project.type}
@@ -105,7 +105,7 @@ const TeamLeaderDashboard = () => {
               handleClick={handleLogout}
               handleProfileView={handleProfileView}
             >
-              {data.map((project, index) => (
+              {projects.map((project, index) => (
                 <Pills
                   project={project}
                   type={project.type}
@@ -119,7 +119,7 @@ const TeamLeaderDashboard = () => {
       </div>
 
       <main className="dashboard-container">
-        <TLDashboard />
+        {project && <TLDashboard project={project} />}
       </main>
     </div>
   );
