@@ -121,26 +121,6 @@
   font-size: 24px;
 }
 
-.emp-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: none;
-  box-shadow: none;
-}
-
-.emp-box-col {
-  background-color: var(--white);
-  min-height: 45%;
-  border-radius: 15px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s ease;
-}
-
 .emp-deadline,
 .emp-user-management {
   flex-direction: column;

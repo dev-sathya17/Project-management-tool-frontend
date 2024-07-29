@@ -9,7 +9,6 @@ import {
 
 const PieChartComponent = ({ data }) => {
   const COLORS = ["#4caf50", "#ff9800", "#ff5722", "#f44336"];
-
   return (
     <>
       {data && (

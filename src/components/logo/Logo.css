@@ -6,6 +6,10 @@
   color: var(--black);
 }
 
+.logo-img {
+  border-radius: 5px;
+}
+
 .logo {
   font-size: 24px;
 }

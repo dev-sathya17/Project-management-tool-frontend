@@ -7,13 +7,13 @@
   gap: 20px;
   border-radius: 15px;
   padding: 10px;
-  color: var(--white);
+  color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .add-icon {
-  color: var(--white);
+  color: #fff;
   font-size: 20px;
   margin: 0;
   padding-top: 5px;

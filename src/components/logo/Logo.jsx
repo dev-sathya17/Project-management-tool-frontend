@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <div className="logo-container">
       <PiChartLineUpBold className="logo" />
-      <img src={LogoImage} alt="logo" />
+      <img src={LogoImage} alt="logo" className="logo-img" />
     </div>
   );
 };
