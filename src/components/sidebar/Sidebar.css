@@ -1,7 +1,6 @@
 .sidebar-container {
   width: 100%;
   background-color: var(--white);
-  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;

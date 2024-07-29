@@ -8,7 +8,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
 }
 
 .modal {
@@ -20,12 +19,8 @@
   width: 90%;
 }
 
-.modal-title {
+.modal h2 {
   margin-top: 0;
-}
-
-.modal-title {
-  text-align: center;
 }
 
 .modal-form {

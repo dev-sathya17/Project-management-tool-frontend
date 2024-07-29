@@ -27,6 +27,10 @@
   list-style: none;
   cursor: pointer;
   position: relative;
+}
+
+.nav-link {
+  text-decoration: none;
   color: var(--black);
 }
 

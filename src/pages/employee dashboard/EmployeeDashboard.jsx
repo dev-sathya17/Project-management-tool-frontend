@@ -10,13 +10,10 @@ import { RxCross1 } from "react-icons/rx";
 import { FaBell } from "react-icons/fa6";
 import { useState } from "react";
 import Pills from "./../../components/pills/Pills";
-import DashboardEmployee from "../../components/EmployeeDashboard/DashboardEmployee";
-import Workspace from "../../components/workspace/Workspace";
 
 const EmployeeDashboard = () => {
   const [view, setView] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
-  const [page, setPage] = useState("Dashboard");
   const navigate = useNavigate();
 
   const { user, setUser } = useUser();
@@ -37,10 +34,6 @@ const EmployeeDashboard = () => {
       setUser(JSON.parse(storedUser));
     }
   }
-
-  const handlePage = (page) => {
-    // setPage(page);
-  };
 
   const handleToggle = () => {
     setView(!view);
@@ -86,13 +79,7 @@ const EmployeeDashboard = () => {
           handleProfileView={handleProfileView}
         >
           {pills.map((pill, index) => (
-            <Pills
-              data={pill}
-              type={pill.type}
-              key={index}
-              handleClick={handlePage}
-              page={pill.title}
-            />
+            <Pills data={pill} type={pill.type} key={index} page={pill.title} />
           ))}
         </Sidebar>
       </div>
@@ -118,7 +105,6 @@ const EmployeeDashboard = () => {
                   data={pill}
                   type={pill.type}
                   key={index}
-                  handleClick={handlePage}
                   page={pill.title}
                 />
               ))}
@@ -128,7 +114,6 @@ const EmployeeDashboard = () => {
       </div>
 
       <main className="dashboard-container">
-        {/* {page === "Dashboard" ? <DashboardEmployee /> : <Workspace />} */}
         <Outlet />
       </main>
     </div>

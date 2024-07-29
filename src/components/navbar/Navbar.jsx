@@ -4,6 +4,7 @@ import Switch from "../switch/Switch";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross2 } from "react-icons/rx";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ handleClick }) => {
   const [view, setView] = useState(false);
@@ -20,10 +21,26 @@ const Navbar = ({ handleClick }) => {
           <RxHamburgerMenu className="hamburger-icon" onClick={handleToggle} />
         )}
         <ul className="nav-items">
-          <li className="nav-item">Manage Users</li>
-          <li className="nav-item">View Reports</li>
-          <li className="nav-item">View Projects</li>
-          <li className="nav-item">View Tasks</li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/admin/users">
+              Manage Users
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/admin/reports">
+              View Reports
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/admin/projects">
+              View Projects
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/admin/tasks">
+              View Tasks
+            </Link>
+          </li>
         </ul>
         <div className="nav-footer">
           <Switch />

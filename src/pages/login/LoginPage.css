@@ -31,7 +31,6 @@
 .input-container-login {
   display: flex;
   align-items: center;
-  /* width: 90%; */
   gap: 20px;
   justify-content: center;
 }
@@ -71,7 +70,7 @@
   margin: 50px 0;
   color: var(--black);
 
-  /* box-shadow: 8px 5px 5px rgba(132, 10, 255, 0.1); */
+  box-shadow: 8px 5px 5px rgba(132, 10, 255, 0.1);
 }
 
 .button-error {

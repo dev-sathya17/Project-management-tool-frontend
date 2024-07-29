@@ -15,6 +15,8 @@ import Profile from "../pages/profile/Profile";
 import Workspace from "../components/workspace/Workspace";
 import DashboardEmployee from "../components/EmployeeDashboard/DashboardEmployee";
 import taskLoader from "../loaders/taskLoader";
+import Users from "../pages/Users/Users";
+import adminLoader from "../loaders/adminLoader";
 
 const router = createBrowserRouter([
   {
@@ -76,6 +78,11 @@ const router = createBrowserRouter([
       {
         path: "*",
         element: <NotFound />,
+      },
+      {
+        path: "users",
+        element: <Users />,
+        loader: adminLoader.getAllUsers,
       },
     ],
   },

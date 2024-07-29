@@ -19,6 +19,9 @@ const adminService = {
   getProjectStatus: async () => {
     return await protectedInstance.get("/projects/admin/statusCount");
   },
+  getAllUsers: async () => {
+    return await protectedInstance.get("/users/admin");
+  },
 };
 
 export default adminService;

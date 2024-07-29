@@ -7,7 +7,6 @@ import { FaMobile } from "react-icons/fa";
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
-import { MdDelete } from "react-icons/md";
 import { FaCamera } from "react-icons/fa";
 import { useRef, useState } from "react";
 import { useUser } from "../../contexts/UserContext";
@@ -63,23 +62,6 @@ const Profile = () => {
       });
   };
 
-  const handleDelete = () => {
-    // delete user from database
-    // const choice = confirm("Are you sure you want to delete your profile?");
-    // if (choice) {
-    //   userService
-    //     .deleteProfile()
-    //     .then((response) => {
-    //       setUser(null);
-    //       alert("Profile deleted successfully");
-    //     })
-    //     .catch((error) => {
-    //       console.log(error);
-    //       alert("Failed to delete profile");
-    //     });
-    // }
-  };
-
   return (
     <div className="profile-container">
       <div className="profile-head">
@@ -104,11 +86,6 @@ const Profile = () => {
         <div className="profile-row">
           <div className="profile-cell">
             <FaEdit className="profile-icon edit-icon" onClick={toggleUpdate} />
-
-            <MdDelete
-              className="profile-icon delete-icon"
-              onClick={handleDelete}
-            />
           </div>
         </div>
         <div className="profile-row">
