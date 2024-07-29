@@ -21,6 +21,7 @@
 .bell-icon {
   font-size: 22px;
   cursor: pointer;
+  color: var(--black);
 }
 
 .dashboard-container {

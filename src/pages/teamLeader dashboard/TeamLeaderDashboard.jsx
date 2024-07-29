@@ -6,7 +6,7 @@ import "./dashboard.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Logo from "../../components/logo/Logo";
 import { RxCross1 } from "react-icons/rx";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import TLDashboard from "../../components/TeamLeaderDashboard/TLDashboard";
 import { FaBell } from "react-icons/fa6";
 import NotificationPanel from "../../components/notifications/NotificationPanel";
@@ -40,7 +40,7 @@ const TeamLeaderDashboard = () => {
   };
 
   const handleProfileView = () => {
-    navigate(`/auth/profile`);
+    navigate(`/leader/profile`);
   };
 
   const handleLogout = () => {
@@ -80,7 +80,7 @@ const TeamLeaderDashboard = () => {
         >
           {projects.map((project, index) => (
             <Pills
-              project={project}
+              data={project}
               type={project.type}
               key={index}
               handleClick={handleSelectProject}
@@ -107,7 +107,7 @@ const TeamLeaderDashboard = () => {
             >
               {projects.map((project, index) => (
                 <Pills
-                  project={project}
+                  data={project}
                   type={project.type}
                   key={index}
                   handleClick={handleSelectProject}

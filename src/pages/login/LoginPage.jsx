@@ -48,13 +48,12 @@ const LoginPage = () => {
             alert(response.data.message);
             formik.resetForm();
             if (response.data.user.role === "employee") {
-              navigate("/auth/employee/dashboard");
+              navigate("/employee/dashboard");
             } else if (response.data.user.role === "teamLeader") {
-              navigate("/auth/dashboard");
+              navigate("/leader/dashboard");
             } else if (response.data.user.role === "admin") {
-              navigate("auth/admin/dashboard");
+              navigate("/admin/dashboard");
             }
-            // navigate("/dashboard");
           }
         })
         .catch((error) => {

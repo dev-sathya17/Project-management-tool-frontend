@@ -90,8 +90,6 @@ const TLDashboard = ({ project }) => {
       });
   }, [project]);
 
-  console.log(project.tasks.length);
-
   return (
     <div className="tld-container">
       <div className="tld-row">

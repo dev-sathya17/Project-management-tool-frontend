@@ -48,6 +48,26 @@ const userService = {
   updateProfile: async (userData) => {
     return await protectedInstance.put("/users", userData);
   },
+
+  // Service to fetch user progress
+  fetchProgress: async (id) => {
+    return await protectedInstance.get(`/users/${id}/tasks/status`);
+  },
+
+  // Service to fetch user's performance
+  fetchPerformance: async (id) => {
+    return await protectedInstance.get(`/users/${id}/performance`);
+  },
+
+  // Service to fetch pending tasks for today
+  fetchPendingTasks: async (id) => {
+    return await protectedInstance.get(`/users/${id}/tasks/pending`);
+  },
+
+  // Service to fetch user's productivity data
+  fetchProductivity: async (id) => {
+    return await protectedInstance.get(`/users/${id}/productivity`);
+  },
 };
 
 // Exporting the user service

@@ -42,7 +42,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "auth",
+    path: "leader",
     element: <ProtectedRoute />,
     loader: userLoader.checkAuth,
     children: [
@@ -88,6 +88,10 @@ const router = createBrowserRouter([
       {
         path: "*",
         element: <NotFound />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
       },
     ],
   },

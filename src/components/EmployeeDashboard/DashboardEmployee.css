@@ -1,26 +1,37 @@
-.tld-container {
+.emp-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.tld-row {
+.emp-row {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   padding: 15px;
 }
 
-.row-2 > .tld-col {
-  width: 270px;
+.performance-best {
+  box-shadow: 0px 0px 15px var(--accent);
 }
 
-.tld-col {
+.performance-good {
+  box-shadow: 0px 0px 15px rgb(113, 255, 113);
+}
+
+.performance-mid {
+  box-shadow: 0px 0px 15px rgb(255, 192, 90);
+}
+
+.performance-bad {
+  box-shadow: 0px 0px 15px rgb(255, 86, 86);
+}
+
+.emp-col {
   background-color: var(--white);
   border-radius: 15px;
   width: 350px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,84 +40,88 @@
   color: var(--black);
 }
 
-.tld-col:not(:last-child):hover,
-.tld-box-col:hover {
+.emp-col:not(.emp-performance) {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.emp-col:not(:last-child):hover,
+.emp-box-col:hover {
   transform: scale(1.05);
 }
 
-.tld-graph {
+.emp-graph {
   width: 450px;
 }
 
-.risk-title,
+.performance-title,
 .task-header,
-.tld-reports-header,
-.tld-project-header {
+.emp-reports-header,
+.emp-project-header,
+.emp-duration-header {
   font-size: 24px;
   width: 100%;
   text-align: center;
   border-bottom: 2px solid var(--gray-light);
 }
 
-.risk-value,
+.performance-value,
 .task-value {
   font-size: 72px;
 }
 
-.tld-task {
+.emp-task,
+.emp-duration {
   flex-direction: column;
   justify-content: space-between;
   padding: 15px;
 }
 
-.task-description {
+.task-description,
+.emp-duration-description,
+.emp-project-description {
   font-size: 18px;
   margin-bottom: 25px;
 }
 
-.tld-risk {
+.emp-performance {
   flex-direction: column;
   justify-content: space-between;
   padding: 15px;
 }
 
-.tld-risk:hover {
+.emp-performance:hover {
   transform: scale(1.05);
 }
 
-.risk-low {
-  box-shadow: 0px 0px 15px rgb(113, 255, 113);
-}
-
-.risk-medium {
-  box-shadow: 0px 0px 15px rgb(255, 192, 90);
-}
-
-.risk-high {
-  box-shadow: 0px 0px 15px rgb(255, 86, 86);
-}
-
-.tld-reports,
-.tld-project {
+.emp-reports,
+.emp-project {
   flex-direction: column;
   justify-content: space-between;
   padding: 15px;
   cursor: pointer;
 }
 
-.tld-reports-description,
-.tld-project-description,
-.risk-description {
+.emp-reports-description,
+.emp-project-description,
+.performance-description {
   text-align: center;
   margin-bottom: 15px;
 }
 
-.tld-report-icon,
-.tld-project-icon {
+.emp-duration-value {
+  font-size: 36px;
+}
+
+.emp-report-icon,
+.emp-project-icon {
   font-size: 72px;
 }
 
-.tld-box {
+.emp-duration-icon {
+  font-size: 24px;
+}
+
+.emp-box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -114,7 +129,7 @@
   box-shadow: none;
 }
 
-.tld-box-col {
+.emp-box-col {
   background-color: var(--white);
   min-height: 45%;
   border-radius: 15px;
@@ -126,40 +141,40 @@
   transition: 0.3s ease;
 }
 
-.tld-deadline,
-.tld-user-management {
+.emp-deadline,
+.emp-user-management {
   flex-direction: column;
   justify-content: space-between;
   padding: 15px;
 }
 
-.tld-deadline-header,
-.tld-team-header {
+.emp-deadline-header,
+.emp-team-header {
   font-size: 20px;
 }
 
-.tld-user-management {
+.emp-user-management {
   cursor: pointer;
 }
 
-.tld-deadline-value {
+.emp-deadline-value {
   font-size: 24px;
 }
 
-.tld-team-icon {
+.emp-team-icon {
   font-size: 36px;
 }
 
-.tld-deadline-description {
+.emp-deadline-description {
   text-align: center;
   font-size: 14px;
 }
 
 @media screen and (max-width: 768px) {
-  .tld-col {
+  .emp-col {
     width: 100%;
   }
-  .row-2 > .tld-col {
+  .row-2 > .emp-col {
     width: 100%;
   }
 }

@@ -3,6 +3,7 @@
   align-items: center;
   gap: 10px;
   justify-content: center;
+  color: var(--black);
 }
 
 .logo {
