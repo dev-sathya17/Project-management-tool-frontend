@@ -12,6 +12,8 @@ import NotFound from "../pages/not found/NotFound";
 import ForgotPassword from "../pages/forgot password/ForgotPassword";
 import Verify from "../pages/forgot password/Verify";
 import Profile from "../pages/profile/Profile";
+import Workspace from "../components/workspace/Workspace";
+import DashboardEmployee from "../components/EmployeeDashboard/DashboardEmployee";
 
 const router = createBrowserRouter([
   {
@@ -82,8 +84,18 @@ const router = createBrowserRouter([
     loader: userLoader.checkAuth,
     children: [
       {
-        path: "dashboard",
+        path: "",
         element: <EmployeeDashboard />,
+        children: [
+          {
+            path: "dashboard",
+            element: <DashboardEmployee />,
+          },
+          {
+            path: "workspace",
+            element: <Workspace />,
+          },
+        ],
       },
       {
         path: "*",

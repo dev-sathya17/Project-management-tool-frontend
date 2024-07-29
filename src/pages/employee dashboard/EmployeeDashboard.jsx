@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import Logo from "../../components/logo/Logo";
 import Sidebar from "../../components/sidebar/Sidebar";
 import userService from "../../services/userService";
@@ -24,10 +24,10 @@ const EmployeeDashboard = () => {
 
   const pills = [
     {
-      title: "Dashboard",
+      title: "dashboard",
     },
     {
-      title: "Workspace",
+      title: "workspace",
     },
   ];
 
@@ -39,7 +39,7 @@ const EmployeeDashboard = () => {
   }
 
   const handlePage = (page) => {
-    setPage(page);
+    // setPage(page);
   };
 
   const handleToggle = () => {
@@ -128,7 +128,8 @@ const EmployeeDashboard = () => {
       </div>
 
       <main className="dashboard-container">
-        {page === "Dashboard" ? <DashboardEmployee /> : <Workspace />}
+        {/* {page === "Dashboard" ? <DashboardEmployee /> : <Workspace />} */}
+        <Outlet />
       </main>
     </div>
   );
