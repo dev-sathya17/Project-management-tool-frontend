@@ -87,6 +87,10 @@ const userService = {
       },
     });
   },
+
+  activateUser: async (id) => {
+    return await instance.get(`/users/activate/${id}`);
+  },
 };
 
 // Exporting the user service

@@ -23,6 +23,7 @@ import ManageTeam from "../pages/manage team/ManageTeam";
 import ManageProjects from "../pages/manage projects/ManageProjects";
 import Project from "../pages/project/Project";
 import ReportDashboard from "../pages/reports/Reports";
+import ActivateUser from "../pages/activate user/ActivateUser";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <RegisterPage />,
+      },
+      {
+        path: "activate/:id",
+        element: <ActivateUser />,
       },
       {
         path: "login",
