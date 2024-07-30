@@ -8,6 +8,7 @@ import userService from "../../services/userService";
 import { useUser } from "../../contexts/UserContext";
 import useStorage from "../../hooks/useStorage";
 import projectService from "../../services/projectService";
+import { Link } from "react-router-dom";
 
 const DashboardEmployee = () => {
   const [duration, setDuration] = useState("");
@@ -161,12 +162,12 @@ const DashboardEmployee = () => {
             Yeesh! Not much time pending.
           </p>
         </div>
-        <div className="emp-col emp-project">
-          <p className="emp-project-header">View Team</p>
-          <FaUsers className="emp-project-icon" />
-          <p className="emp-project-description">
-            Here&lsquo;s everyone you are working with.
-          </p>
+        <div className="emp-col emp-team">
+          <p className="emp-team-header">View Team</p>
+          <FaUsers className="emp-team-icon" />
+          <Link className="emp-team-description" to="/employee/team">
+            Here&lsquo;s everyone you are working with
+          </Link>
         </div>
       </div>
     </div>

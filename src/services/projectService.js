@@ -17,6 +17,9 @@ const projectService = {
   getProjectProductivity: async (id) => {
     return await protectedInstance.get(`/projects/${id}/productivity`);
   },
+  getTeam: async () => {
+    return await protectedInstance.get(`/projects/team`);
+  },
 };
 
 // Export the project service

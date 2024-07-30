@@ -11,7 +11,7 @@ import { MdEmail } from "react-icons/md";
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 import "./Card.css";
 
-const Card = ({ user, onEdit, onDelete }) => {
+const Card = ({ user, onEdit, onDelete, type }) => {
   return (
     <div className="card">
       <img src={user.image} alt={user.firstName} className="image" />
@@ -41,10 +41,14 @@ const Card = ({ user, onEdit, onDelete }) => {
           <RiMoneyRupeeCircleFill className="card-icon" />
           <p>Salary: {user.salaryPerMonth}</p>
         </div>
-        <div className="card-actions">
-          <FaEdit className="edit-icon" onClick={() => onEdit(user)} />
-          <FaTrash className="delete-icon" onClick={() => onDelete(user)} />
-        </div>
+        {type !== "view" ? (
+          <div className="card-actions">
+            <FaEdit className="edit-icon" onClick={() => onEdit(user)} />
+            <FaTrash className="delete-icon" onClick={() => onDelete(user)} />
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

@@ -17,6 +17,8 @@ import DashboardEmployee from "../components/EmployeeDashboard/DashboardEmployee
 import taskLoader from "../loaders/taskLoader";
 import Users from "../pages/Users/Users";
 import adminLoader from "../loaders/adminLoader";
+import ViewTeam from "../pages/view team/ViewTeam";
+import projectLoader from "../loaders/projectLoader";
 
 const router = createBrowserRouter([
   {
@@ -113,6 +115,11 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile />,
+      },
+      {
+        path: "team",
+        element: <ViewTeam />,
+        loader: projectLoader.getProjectMembers,
       },
     ],
   },

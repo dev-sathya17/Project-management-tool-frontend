@@ -35,7 +35,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 350px;
+  min-height: 300px;
   transition: 0.3s ease;
   color: var(--black);
 }
@@ -44,8 +44,7 @@
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
-.emp-col:not(:last-child):hover,
-.emp-box-col:hover {
+.emp-col:hover {
   transform: scale(1.05);
 }
 
@@ -56,7 +55,7 @@
 .performance-title,
 .task-header,
 .emp-reports-header,
-.emp-project-header,
+.emp-team-header,
 .emp-duration-header {
   font-size: 24px;
   width: 100%;
@@ -77,8 +76,7 @@
 }
 
 .task-description,
-.emp-duration-description,
-.emp-project-description {
+.emp-duration-description {
   font-size: 18px;
   margin-bottom: 25px;
 }
@@ -93,16 +91,13 @@
   transform: scale(1.05);
 }
 
-.emp-reports,
-.emp-project {
+.emp-team {
   flex-direction: column;
   justify-content: space-between;
   padding: 15px;
-  cursor: pointer;
 }
 
-.emp-reports-description,
-.emp-project-description,
+.emp-team-description,
 .performance-description {
   text-align: center;
   margin-bottom: 15px;
@@ -112,8 +107,17 @@
   font-size: 36px;
 }
 
+.emp-team-description {
+  all: unset;
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 .emp-report-icon,
-.emp-project-icon {
+.emp-team-icon {
   font-size: 72px;
 }
 
@@ -121,8 +125,7 @@
   font-size: 24px;
 }
 
-.emp-deadline,
-.emp-user-management {
+.emp-deadline {
   flex-direction: column;
   justify-content: space-between;
   padding: 15px;
@@ -139,10 +142,6 @@
 
 .emp-deadline-value {
   font-size: 24px;
-}
-
-.emp-team-icon {
-  font-size: 36px;
 }
 
 .emp-deadline-description {
