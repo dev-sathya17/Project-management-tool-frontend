@@ -155,6 +155,17 @@
   font-size: 14px;
 }
 
+.tld-team-description {
+  all: unset;
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+
 @media screen and (max-width: 768px) {
   .tld-col {
     width: 100%;

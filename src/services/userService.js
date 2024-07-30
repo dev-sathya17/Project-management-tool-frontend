@@ -68,6 +68,11 @@ const userService = {
   fetchProductivity: async (id) => {
     return await protectedInstance.get(`/users/${id}/productivity`);
   },
+
+  // Service to fetch unassigned users
+  fetchUnassignedUsers: async () => {
+    return await protectedInstance.get("/users/unassigned");
+  },
 };
 
 // Exporting the user service

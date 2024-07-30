@@ -6,6 +6,7 @@ import { FaTasks } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import projectService from "../../services/projectService";
+import { Link } from "react-router-dom";
 const TLDashboard = ({ project }) => {
   const [progress, setProgress] = useState([]);
   const [productivity, setProductivity] = useState([]);
@@ -159,8 +160,13 @@ const TLDashboard = ({ project }) => {
           <div className="tld-user-management tld-box-col">
             <p className="tld-team-header">Manage Team</p>
             <FaUsers className="tld-team-icon" />
-            <p className="tld-deadline-description">
-              Here&lsquo;s who all you are working with.
+            <p className="tld-team-description">
+              <Link
+                className="emp-team-description"
+                to={`/leader/${project._id}/manage-team`}
+              >
+                Here&lsquo;s everyone you are working with
+              </Link>
             </p>
           </div>
         </div>

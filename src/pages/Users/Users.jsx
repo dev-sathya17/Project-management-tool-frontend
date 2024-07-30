@@ -1,6 +1,5 @@
 import { useLoaderData } from "react-router-dom";
 import "./Users.css";
-import "./Users.css";
 import { useState } from "react";
 import UserModal from "../../components/user modal/UserModal";
 import SearchBar from "../../components/SearchBar/SearchBar";

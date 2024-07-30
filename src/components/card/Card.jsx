@@ -43,7 +43,11 @@ const Card = ({ user, onEdit, onDelete, type }) => {
         </div>
         {type !== "view" ? (
           <div className="card-actions">
-            <FaEdit className="edit-icon" onClick={() => onEdit(user)} />
+            {type === "manage" ? (
+              <></>
+            ) : (
+              <FaEdit className="edit-icon" onClick={() => onEdit(user)} />
+            )}
             <FaTrash className="delete-icon" onClick={() => onDelete(user)} />
           </div>
         ) : (

@@ -36,11 +36,6 @@ const Navbar = ({ handleClick }) => {
               View Projects
             </Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/admin/tasks">
-              View Tasks
-            </Link>
-          </li>
         </ul>
         <div className="nav-footer">
           <Switch />
@@ -60,7 +55,6 @@ const Navbar = ({ handleClick }) => {
             <li className="nav-item">Manage Users</li>
             <li className="nav-item">View Reports</li>
             <li className="nav-item">View Projects</li>
-            <li className="nav-item">View Tasks</li>
           </ul>
           <div className="nav-footer-mob">
             <button className="nav-logout-btn" onClick={handleClick}>

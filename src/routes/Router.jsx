@@ -19,6 +19,7 @@ import Users from "../pages/Users/Users";
 import adminLoader from "../loaders/adminLoader";
 import ViewTeam from "../pages/view team/ViewTeam";
 import projectLoader from "../loaders/projectLoader";
+import ManageTeam from "../pages/manage team/ManageTeam";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile />,
+      },
+      {
+        path: ":projectId/manage-team",
+        element: <ManageTeam />,
       },
     ],
   },

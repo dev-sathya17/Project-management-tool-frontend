@@ -20,6 +20,19 @@ const projectService = {
   getTeam: async () => {
     return await protectedInstance.get(`/projects/team`);
   },
+  addMember: async (member, id) => {
+    return await protectedInstance.put(`/projects/${id}`, {
+      members: [member],
+    });
+  },
+  getProjectById: (id) => {
+    return protectedInstance.get(`/projects/${id}`);
+  },
+  removeMember: async (memberId, id) => {
+    return await protectedInstance.delete(
+      `/projects/${id}/members/${memberId}`
+    );
+  },
 };
 
 // Export the project service
