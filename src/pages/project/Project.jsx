@@ -27,6 +27,7 @@ const Project = () => {
   const [subTaskModal, setSubTaskModal] = useState(false);
   const [taskId, setTaskId] = useState("");
   const [statusFilter, setStatusFilter] = useState();
+
   useEffect(() => {
     projectService
       .getProjectById(projectId)
@@ -88,10 +89,6 @@ const Project = () => {
         console.error(err);
       });
   };
-
-  const deleteAttachment = () => {};
-
-  const addAttachment = (attachment) => {};
 
   const changeProjectStatus = (status) => {
     if (status === project.status) {
@@ -307,13 +304,6 @@ const Project = () => {
                   );
                 })}
               </div>
-            </div>
-            <div className="project-attachments project-row">
-              <div className="project-attachment-header">
-                <h3>Attachments</h3>
-                <FaCirclePlus className="add-icon" />
-              </div>
-              <div className="project-attachments"></div>
             </div>
           </div>
           {viewModal && (

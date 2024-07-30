@@ -7,7 +7,6 @@ const TaskModal = ({ task, closeModal, type, addTask }) => {
     title: "",
     description: "",
     deadline: "",
-    attachments: [],
     priority: "low",
     assignedTo: "",
   });
@@ -89,21 +88,6 @@ const TaskModal = ({ task, closeModal, type, addTask }) => {
               />
             </div>
             <div className="task-modal-section">
-              <h3>
-                <FaPaperclip className="task-modal-icon" /> Attachments
-              </h3>
-              <input type="file" name="" id="" multiple />
-              {/* {task.attachments.length > 0 ? (
-                <ul>
-                  {task.attachments.map((attachment, index) => (
-                    <li key={index}>{attachment}</li>
-                  ))}
-                </ul>
-              ) : (
-                <p>No attachments</p>
-              )} */}
-            </div>
-            <div className="task-modal-section">
               <label htmlFor="task-priority">Priority:</label>
               <select
                 id="task-priority"
@@ -159,20 +143,6 @@ const TaskModal = ({ task, closeModal, type, addTask }) => {
                 </ul>
               ) : (
                 <p>No subtasks</p>
-              )}
-            </div>
-            <div className="task-modal-section">
-              <h3>
-                <FaPaperclip className="task-modal-icon" /> Attachments
-              </h3>
-              {task.attachments.length > 0 ? (
-                <ul>
-                  {task.attachments.map((attachment, index) => (
-                    <li key={index}>{attachment}</li>
-                  ))}
-                </ul>
-              ) : (
-                <p>No attachments</p>
               )}
             </div>
           </div>

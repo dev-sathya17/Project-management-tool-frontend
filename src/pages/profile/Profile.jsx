@@ -13,10 +13,12 @@ import { useUser } from "../../contexts/UserContext";
 import UserModal from "../../components/profile modal/UserModal";
 import userService from "../../services/userService";
 import useStorage from "../../hooks/useStorage";
+import { IoCloudUpload } from "react-icons/io5";
 
 const Profile = () => {
-  // const [image, setImage] = useState(null);
+  const [image, setImage] = useState(null);
   const [editUser, setEditUser] = useState();
+  const [imageUrl, setImageUrl] = useState(null);
 
   const { user, setUser } = useUser();
 
@@ -30,6 +32,11 @@ const Profile = () => {
     }
   }
 
+  if (user) {
+    user.image = user.image.replace("\\", "/");
+    console.log(user);
+  }
+
   const fileInputRef = useRef(null);
 
   const handleIconClick = () => {
@@ -38,11 +45,8 @@ const Profile = () => {
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      console.log(imageUrl);
-      // setImage(imageUrl);
-    }
+    setImage(file);
+    setImageUrl(URL.createObjectURL(file));
   };
 
   const toggleUpdate = () => setEditUser(user);
@@ -62,24 +66,48 @@ const Profile = () => {
       });
   };
 
+  const uploadImage = () => {
+    // const data = new FormData();
+    console.log(image);
+    // data.append("image", image);
+    userService.uploadImage({ image }).then((response) => {
+      setUser(response.data.updatedUser);
+      alert("Profile image updated successfully");
+      setImageUrl(null);
+    });
+  };
+
   return (
     <div className="profile-container">
       <div className="profile-head">
         <div className="profile-image">
-          <img
-            src={`http:localhost:3000/uploads/${user.image.split("\\")[1]}`}
-            alt={user.firstName}
-          />
+          {imageUrl ? (
+            <img src={imageUrl} alt="Profile" />
+          ) : (
+            <img
+              src={
+                user.image &&
+                `https://project-management-tool-backend-wzfm.onrender.com/${user.image}`
+              }
+              alt={user.firstName}
+            />
+          )}
         </div>
         <div className="camera-icon">
-          <FaCamera onClick={handleIconClick} />
-          <input
-            type="file"
-            ref={fileInputRef}
-            className="file-input"
-            accept="image/*"
-            onChange={handleFileChange}
-          />
+          {!imageUrl ? (
+            <>
+              <FaCamera onClick={handleIconClick} />
+              <input
+                type="file"
+                ref={fileInputRef}
+                className="file-input"
+                accept="image/*"
+                onChange={handleFileChange}
+              />
+            </>
+          ) : (
+            <IoCloudUpload className="upload-icon" onClick={uploadImage} />
+          )}
         </div>
       </div>
       <div className="profile-body">

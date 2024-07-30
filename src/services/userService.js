@@ -78,6 +78,11 @@ const userService = {
   fetchTaskUnassignedUsers: async () => {
     return await protectedInstance.get(`/users/unassigned/tasks`);
   },
+
+  uploadImage: async (data) => {
+    console.log(data);
+    return await protectedInstance.put("/users", data);
+  },
 };
 
 // Exporting the user service

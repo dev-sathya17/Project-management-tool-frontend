@@ -14,7 +14,13 @@ import "./Card.css";
 const Card = ({ user, onEdit, onDelete, type }) => {
   return (
     <div className="card">
-      <img src={user.image} alt={user.firstName} className="image" />
+      <img
+        src={`https://project-management-tool-backend-wzfm.onrender.com/${
+          user.image || "avatar.png"
+        }`}
+        alt={user.firstName}
+        className="image"
+      />
       <div className="card-details">
         <div className="card-item">
           <FaUser className="card-icon" />

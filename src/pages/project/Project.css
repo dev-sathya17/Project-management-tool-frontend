@@ -118,8 +118,7 @@
   justify-content: space-between;
 }
 
-.project-task-header,
-.project-attachment-header {
+.project-task-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
