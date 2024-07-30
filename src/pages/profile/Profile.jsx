@@ -22,7 +22,8 @@ const Profile = () => {
 
   const { user, setUser } = useUser();
 
-  const { getValueFromStorage } = useStorage();
+  const { getValueFromStorage, setValueWithStorage, removeValueFromStorage } =
+    useStorage();
 
   if (!user) {
     const storedUser = getValueFromStorage("user");
@@ -34,7 +35,7 @@ const Profile = () => {
 
   if (user) {
     user.image = user.image.replace("\\", "/");
-    console.log(user);
+    console.log(user.image);
   }
 
   const fileInputRef = useRef(null);
@@ -56,6 +57,8 @@ const Profile = () => {
       .updateProfile(values)
       .then((response) => {
         setUser(response.data.updatedUser);
+        removeValueFromStorage("user");
+        setValueWithStorage("user", JSON.stringify(response.data.updatedUser));
         alert("Profile updated successfully");
         setEditUser(null);
       })
@@ -67,10 +70,19 @@ const Profile = () => {
   };
 
   const uploadImage = () => {
-    // const data = new FormData();
-    console.log(image);
-    // data.append("image", image);
-    userService.uploadImage({ image }).then((response) => {
+    if (!image) {
+      alert("Please select an image to upload.");
+      return;
+    }
+
+    const data = new FormData();
+    data.append("image", image);
+
+    for (let [key, value] of data.entries()) {
+      console.log(key, value);
+    }
+
+    userService.uploadImage(data).then((response) => {
       setUser(response.data.updatedUser);
       alert("Profile image updated successfully");
       setImageUrl(null);

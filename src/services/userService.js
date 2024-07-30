@@ -81,7 +81,11 @@ const userService = {
 
   uploadImage: async (data) => {
     console.log(data);
-    return await protectedInstance.put("/users", data);
+    return await protectedInstance.put("/users", data, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
   },
 };
 
