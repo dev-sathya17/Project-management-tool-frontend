@@ -22,6 +22,7 @@ import projectLoader from "../loaders/projectLoader";
 import ManageTeam from "../pages/manage team/ManageTeam";
 import ManageProjects from "../pages/manage projects/ManageProjects";
 import Project from "../pages/project/Project";
+import ReportDashboard from "../pages/reports/Reports";
 
 const router = createBrowserRouter([
   {
@@ -82,6 +83,11 @@ const router = createBrowserRouter([
         path: "projects/:projectId",
         element: <Project />,
       },
+      {
+        path: "reports",
+        element: <ReportDashboard />,
+        loader: userLoader.getProjects,
+      },
     ],
   },
   {
@@ -101,6 +107,20 @@ const router = createBrowserRouter([
         path: "users",
         element: <Users />,
         loader: adminLoader.getAllUsers,
+      },
+      {
+        path: "reports",
+        element: <ReportDashboard />,
+        loader: adminLoader.getAllProjects,
+      },
+      {
+        path: "projects",
+        element: <ManageProjects />,
+        loader: adminLoader.getAllProjects,
+      },
+      {
+        path: "projects/:projectId",
+        element: <Project />,
       },
     ],
   },

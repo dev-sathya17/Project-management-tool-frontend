@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Pills.css";
-const Pills = ({ data, type, page }) => {
+const Pills = ({ data, type, page, handleClick }) => {
   return (
-    <div className="pill">
+    <div className="pill" onClick={() => handleClick(data)}>
       {type === "projects" ? (
         <>
           <p className="pill-title">{data.title}</p>

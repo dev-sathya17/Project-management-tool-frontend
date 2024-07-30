@@ -1,0 +1,84 @@
+.project-report-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 50px;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-report-container h2 {
+  margin-top: 0;
+  color: #4caf50;
+}
+
+.tasks-list .task {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.tasks-list .assigned-to {
+  display: flex;
+  align-items: center;
+}
+
+.tasks-list .profile-pic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-print,
+.btn-download {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.btn-print:hover,
+.btn-download:hover {
+  background-color: #45a049;
+}
+
+.printable-area {
+  margin-bottom: 20px;
+}
+/* 
+@page {
+  size: A4;
+}
+
+@page :left {
+  margin-left: 3cm;
+}
+
+@page :blank {
+  @top-center {
+    content: "This page is intentionally left blank.";
+  }
+} */
+
+@media print {
+  .button-container {
+    display: none;
+  }
+
+  .printable-area {
+    margin: 200px;
+    padding: 200px;
+  }
+}

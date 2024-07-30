@@ -138,7 +138,15 @@ const DashboardEmployee = () => {
           <p className="performance-title">Performance</p>
           <h1 className="performance-value">{performance || 0}%</h1>
           <p className="performance-description">
-            {"Your Performance is mesmerizing!"}
+            {performance === 100
+              ? "Your Performance is mesmerizing!"
+              : performance < 80
+              ? "You are doing great keep it up."
+              : performance < 60
+              ? "You are doing good! Keep it up."
+              : performance < 40
+              ? "You are doing good! But you got to pick up the pace."
+              : "You need to improve. Don't be disappointed."}
           </p>
         </div>
       </div>
@@ -146,7 +154,13 @@ const DashboardEmployee = () => {
         <div className="emp-col emp-task">
           <p className="task-header">Tasks pending for Today</p>
           <h1 className="task-value">{tasks}</h1>
-          <p className="task-description">Keep Going!</p>
+          <p className="task-description">
+            {tasks === 0
+              ? "Today is a free day!"
+              : tasks <= 5
+              ? "You got some work to do today"
+              : "Today's gonna be a very hardworking day"}
+          </p>
         </div>
         <div className="emp-col emp-duration">
           <p className="emp-duration-header">
@@ -159,7 +173,9 @@ const DashboardEmployee = () => {
             {duration && duration.toFixed(2)} month(s)
           </h3>
           <p className="emp-duration-description">
-            Yeesh! Not much time pending.
+            {duration && duration.toFixed(2) < 1
+              ? "Yeesh! Not much time pending."
+              : "Keep going!"}
           </p>
         </div>
         <div className="emp-col emp-team">

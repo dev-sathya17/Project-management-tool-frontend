@@ -123,7 +123,15 @@ const TLDashboard = ({ project }) => {
           <h1 className="risk-value">{risks.percentage || 0}</h1>
           <p className="risk-level">{risks.impact || "None"}</p>
           <p className="risk-description">
-            {risks.description || "Wohooo, Your project is progressing well!"}
+            {risks.percentage > 90
+              ? "Project is at high risk of incompletion"
+              : risks.percentage > 80
+              ? "Very urgent attention required else project won't be achievable."
+              : risks.percentage > 60
+              ? "Urgent attention required."
+              : risks.percentage > 40
+              ? "The project needs attention in certain areas to improve future risks."
+              : "The project is performing well."}
           </p>
         </div>
       </div>
@@ -131,14 +139,22 @@ const TLDashboard = ({ project }) => {
         <div className="tld-col tld-task">
           <p className="task-header">Tasks pending for Today</p>
           <h1 className="task-value">{tasks}</h1>
-          <p className="task-description">Keep Going!</p>
+          <p className="task-description">
+            {tasks === 0
+              ? "Today is a free day!"
+              : tasks <= 5
+              ? "You got some work to do today"
+              : "Today's gonna be a very hardworking day"}
+          </p>
         </div>
         <div className="tld-col tld-reports">
           <p className="tld-reports-header">View Reports</p>
           <TbReport className="tld-report-icon" />
-          <p className="tld-reports-description">
-            Have a look at how the team&lsquo;s performing
-          </p>
+          <Link className="tld-project-description" to={`/leader/reports`}>
+            <p className="tld-reports-description">
+              Have a look at how the team&lsquo;s performing
+            </p>
+          </Link>
         </div>
         <div className="tld-col tld-project">
           <p className="tld-project-header">Manage Projects</p>
@@ -156,7 +172,9 @@ const TLDashboard = ({ project }) => {
               {duration && duration.toFixed(2)} month(s)
             </h2>
             <p className="tld-deadline-description">
-              Yeesh! Not much time pending.
+              {duration && duration.toFixed(2) < 1
+                ? "Yeesh! Not much time pending."
+                : "Keep going!"}
             </p>
           </div>
           <div className="tld-user-management tld-box-col">

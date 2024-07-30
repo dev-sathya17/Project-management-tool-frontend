@@ -1,7 +1,7 @@
 export const features = [
   {
     icon: "alarm",
-    text: "Get real-time notifications to keep up with your tasks.",
+    text: "Get email notifications to keep up with your tasks.",
   },
   {
     icon: "success",

@@ -9,7 +9,6 @@ import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
 import TLDashboard from "../../components/TeamLeaderDashboard/TLDashboard";
 import { FaBell } from "react-icons/fa6";
-import NotificationPanel from "../../components/notifications/NotificationPanel";
 import userService from "../../services/userService";
 import useStorage from "../../hooks/useStorage";
 
@@ -17,7 +16,6 @@ const TeamLeaderDashboard = () => {
   const { projects } = useLoaderData();
 
   const [view, setView] = useState(false);
-  const [showNotifications, setShowNotifications] = useState(false);
   const [project, setProject] = useState(projects[0]);
   const navigate = useNavigate();
 
@@ -33,10 +31,6 @@ const TeamLeaderDashboard = () => {
 
   const handleToggle = () => {
     setView(!view);
-  };
-
-  const handleToggleNotifications = () => {
-    setShowNotifications(!showNotifications);
   };
 
   const handleProfileView = () => {
@@ -63,6 +57,7 @@ const TeamLeaderDashboard = () => {
   };
 
   const handleSelectProject = (project) => {
+    console.log(project);
     setProject(project);
   };
 
@@ -71,8 +66,6 @@ const TeamLeaderDashboard = () => {
       <div className="dashboard-sidebar-desk">
         <header className="sidebar-header">
           <Logo />
-          <FaBell className="bell-icon" onClick={handleToggleNotifications} />
-          {showNotifications && <NotificationPanel />}
         </header>
         <Sidebar
           handleClick={handleLogout}
@@ -81,7 +74,7 @@ const TeamLeaderDashboard = () => {
           {projects.map((project, index) => (
             <Pills
               data={project}
-              type={project.type}
+              type={"projects"}
               key={index}
               handleClick={handleSelectProject}
             />
@@ -91,8 +84,6 @@ const TeamLeaderDashboard = () => {
       <div className="dashboard-sidebar-mob">
         <div className="nav-mobile">
           <Logo />
-          <FaBell className="bell-icon" onClick={handleToggleNotifications} />
-          {showNotifications && <NotificationPanel />}
           {view ? (
             <RxCross1 onClick={handleToggle} />
           ) : (
@@ -108,7 +99,7 @@ const TeamLeaderDashboard = () => {
               {projects.map((project, index) => (
                 <Pills
                   data={project}
-                  type={project.type}
+                  type={"projects"}
                   key={index}
                   handleClick={handleSelectProject}
                 />

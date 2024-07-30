@@ -52,9 +52,21 @@ const Navbar = ({ handleClick }) => {
             <RxCross2 className="hamburger-icon" onClick={handleToggle} />
           </div>
           <ul className="nav-body-mob">
-            <li className="nav-item">Manage Users</li>
-            <li className="nav-item">View Reports</li>
-            <li className="nav-item">View Projects</li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/admin/users">
+                Manage Users
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/admin/reports">
+                View Reports
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/admin/projects">
+                View Projects
+              </Link>
+            </li>
           </ul>
           <div className="nav-footer-mob">
             <button className="nav-logout-btn" onClick={handleClick}>

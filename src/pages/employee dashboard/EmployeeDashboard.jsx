@@ -4,7 +4,6 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import userService from "../../services/userService";
 import { useUser } from "../../contexts/UserContext";
 import useStorage from "../../hooks/useStorage";
-import NotificationPanel from "../../components/notifications/NotificationPanel";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
 import { FaBell } from "react-icons/fa6";
@@ -13,7 +12,6 @@ import Pills from "./../../components/pills/Pills";
 
 const EmployeeDashboard = () => {
   const [view, setView] = useState(false);
-  const [showNotifications, setShowNotifications] = useState(false);
   const navigate = useNavigate();
 
   const { user, setUser } = useUser();
@@ -37,10 +35,6 @@ const EmployeeDashboard = () => {
 
   const handleToggle = () => {
     setView(!view);
-  };
-
-  const handleToggleNotifications = () => {
-    setShowNotifications(!showNotifications);
   };
 
   const handleProfileView = () => {
@@ -71,8 +65,6 @@ const EmployeeDashboard = () => {
       <div className="dashboard-sidebar-desk">
         <header className="sidebar-header">
           <Logo />
-          <FaBell className="bell-icon" onClick={handleToggleNotifications} />
-          {showNotifications && <NotificationPanel />}
         </header>
         <Sidebar
           handleClick={handleLogout}
@@ -86,8 +78,6 @@ const EmployeeDashboard = () => {
       <div className="dashboard-sidebar-mob">
         <div className="nav-mobile">
           <Logo />
-          <FaBell className="bell-icon" onClick={handleToggleNotifications} />
-          {showNotifications && <NotificationPanel />}
           {view ? (
             <RxCross1 onClick={handleToggle} />
           ) : (

@@ -14,7 +14,7 @@ const BarChartComponent = ({ data }) => {
         <Tooltip />
         <XAxis dataKey={"date"} />
         <YAxis dataKey={"value"} />
-        <Bar dataKey="value" fill="rgb(255,2,2)" />
+        <Bar dataKey="value" fill="#840aff" />
       </BarChart>
     </ResponsiveContainer>
   );

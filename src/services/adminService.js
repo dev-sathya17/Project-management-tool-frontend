@@ -22,6 +22,9 @@ const adminService = {
   getAllUsers: async () => {
     return await protectedInstance.get("/users/admin");
   },
+  getAllProjects: async () => {
+    return await protectedInstance.get("/projects/admin/all");
+  },
 };
 
 export default adminService;

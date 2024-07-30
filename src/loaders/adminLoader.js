@@ -4,6 +4,15 @@ const adminLoader = {
   getAllUsers: async () => {
     return await adminService.getAllUsers();
   },
+  getAllProjects: async () => {
+    try {
+      const response = await adminService.getAllProjects();
+      return response.data;
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
+  },
 };
 
 export default adminLoader;

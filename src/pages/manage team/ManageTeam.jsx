@@ -25,7 +25,6 @@ const ManageTeam = () => {
   const fetchData = () => {
     projectService.getProjectById(projectId).then((response) => {
       if (response.status === 200) {
-        console.log(response.data);
         setProject(response.data);
         setUsers(response.data.members);
       }

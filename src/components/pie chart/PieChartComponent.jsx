@@ -8,7 +8,7 @@ import {
 } from "recharts";
 
 const PieChartComponent = ({ data }) => {
-  const COLORS = ["#4caf50", "#ff9800", "#ff5722", "#f44336"];
+  const COLORS = ["#4caf50", "#ff9800", "#ff230b", "#2b8bff"];
   return (
     <>
       {data && (
@@ -17,9 +17,6 @@ const PieChartComponent = ({ data }) => {
             <Pie
               data={data}
               labelLine={false}
-              // label={({ name, percent }) =>
-              //   `${name}: ${(percent * 100).toFixed(0)}%`
-              // }
               outerRadius={80}
               fill="#8884d8"
               dataKey="value"
