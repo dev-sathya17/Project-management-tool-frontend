@@ -24,6 +24,7 @@ import ManageProjects from "../pages/manage projects/ManageProjects";
 import Project from "../pages/project/Project";
 import ReportDashboard from "../pages/reports/Reports";
 import ActivateUser from "../pages/activate user/ActivateUser";
+import AddProject from "../pages/add project/AddProject";
 
 const router = createBrowserRouter([
   {
@@ -92,6 +93,10 @@ const router = createBrowserRouter([
         path: "reports",
         element: <ReportDashboard />,
         loader: userLoader.getProjects,
+      },
+      {
+        path: "add-project",
+        element: <AddProject />,
       },
     ],
   },

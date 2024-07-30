@@ -38,6 +38,9 @@ const projectService = {
       status,
     });
   },
+  addProject: async (project) => {
+    return await protectedInstance.post(`/projects`, project);
+  },
 };
 
 // Export the project service

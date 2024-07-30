@@ -5,7 +5,11 @@ const userLoader = {
   checkAuth: async () => {
     try {
       const response = await userService.checkAuthentication();
-      return { isAuthenticated: true, role: response.data.role };
+      if (response.data.role) {
+        return { isAuthenticated: true, role: response.data.role };
+      } else {
+        return { isAuthenticated: false, role: null };
+      }
     } catch (error) {
       return { isAuthenticated: false, role: null };
     }

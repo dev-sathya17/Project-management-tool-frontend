@@ -8,7 +8,6 @@ import Logo from "../../components/logo/Logo";
 import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
 import TLDashboard from "../../components/TeamLeaderDashboard/TLDashboard";
-import { FaBell } from "react-icons/fa6";
 import userService from "../../services/userService";
 import useStorage from "../../hooks/useStorage";
 
@@ -57,8 +56,11 @@ const TeamLeaderDashboard = () => {
   };
 
   const handleSelectProject = (project) => {
-    console.log(project);
     setProject(project);
+  };
+
+  const addProject = () => {
+    navigate(`/leader/add-project`);
   };
 
   return (
@@ -79,6 +81,7 @@ const TeamLeaderDashboard = () => {
               handleClick={handleSelectProject}
             />
           ))}
+          <Pills type={"add"} handleClick={addProject} />
         </Sidebar>
       </div>
       <div className="dashboard-sidebar-mob">
@@ -104,6 +107,7 @@ const TeamLeaderDashboard = () => {
                   handleClick={handleSelectProject}
                 />
               ))}
+              <Pills type={"add"} handleClick={addProject} />
             </Sidebar>
           </div>
         )}

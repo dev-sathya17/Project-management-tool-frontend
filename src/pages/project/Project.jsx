@@ -215,7 +215,7 @@ const Project = () => {
                   <p>{new Date(project.endDate).toLocaleDateString()}</p>
                 </div>
                 <div className="project-duration">
-                  <p>{project.duration} month(s)</p>
+                  <p>{project.duration.toFixed(2)} month(s)</p>
                 </div>
               </div>
             </div>
@@ -227,9 +227,9 @@ const Project = () => {
                 {project.members.map((member) => (
                   <div className="project-member" key={member._id}>
                     <img
-                      src={
-                        "https://yt3.googleusercontent.com/-CFTJHU7fEWb7BYEb6Jh9gm1EpetvVGQqtof0Rbh-VQRIznYYKJxCaqv_9HeBcmJmIsp2vOO9JU=s900-c-k-c0x00ffffff-no-rj"
-                      }
+                      src={`https://pro-manager-tool.netlify.app/${
+                        member.image || "avatar.png"
+                      }`}
                       alt={member.firstName}
                     />
                   </div>

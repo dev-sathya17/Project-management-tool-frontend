@@ -62,9 +62,10 @@ const TaskModal = ({ task, closeModal, type, addTask }) => {
               <select
                 id="members"
                 value={newTask.assignedTo}
-                onChange={(e) =>
-                  setNewTask({ ...newTask, assignedTo: e.target.value })
-                }
+                onChange={(e) => {
+                  console.log(e.target.value);
+                  setNewTask({ ...newTask, assignedTo: e.target.value });
+                }}
               >
                 {unassignedUsers.map((user, index) => (
                   <option value={user._id} key={index}>
