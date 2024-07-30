@@ -33,6 +33,11 @@ const projectService = {
       `/projects/${id}/members/${memberId}`
     );
   },
+  updateProjectStatus: async (projectId, status) => {
+    return await protectedInstance.put(`/projects/${projectId}/`, {
+      status,
+    });
+  },
 };
 
 // Export the project service

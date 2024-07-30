@@ -12,13 +12,6 @@
   transition: background-color 0.3s ease;
 }
 
-.add-icon {
-  color: #fff;
-  font-size: 20px;
-  margin: 0;
-  padding-top: 5px;
-}
-
 .pill:hover {
   background-color: var(--accent-dark);
 }

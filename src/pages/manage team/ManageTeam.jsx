@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Card from "../../components/card/Card";
-import UserModal from "../../components/user modal/UserModal";
+import UserModal from "../../components/profile modal/UserModal";
 import "./ManageTeam.css";
 import userService from "../../services/userService";
 import projectService from "../../services/projectService";

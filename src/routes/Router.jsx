@@ -20,6 +20,8 @@ import adminLoader from "../loaders/adminLoader";
 import ViewTeam from "../pages/view team/ViewTeam";
 import projectLoader from "../loaders/projectLoader";
 import ManageTeam from "../pages/manage team/ManageTeam";
+import ManageProjects from "../pages/manage projects/ManageProjects";
+import Project from "../pages/project/Project";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +72,15 @@ const router = createBrowserRouter([
       {
         path: ":projectId/manage-team",
         element: <ManageTeam />,
+      },
+      {
+        path: "projects",
+        element: <ManageProjects />,
+        loader: userLoader.getProjects,
+      },
+      {
+        path: "projects/:projectId",
+        element: <Project />,
       },
     ],
   },

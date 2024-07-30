@@ -143,9 +143,11 @@ const TLDashboard = ({ project }) => {
         <div className="tld-col tld-project">
           <p className="tld-project-header">Manage Projects</p>
           <FaTasks className="tld-project-icon" />
-          <p className="tld-project-description">
-            Need to update your project? Here is where you go!
-          </p>
+          <Link className="tld-project-description" to={`/leader/projects`}>
+            <p className="tld-project-description">
+              Need to update your project? Here is where you go!
+            </p>
+          </Link>
         </div>
         <div className="tld-col tld-box">
           <div className="tld-deadline tld-box-col">
@@ -162,7 +164,7 @@ const TLDashboard = ({ project }) => {
             <FaUsers className="tld-team-icon" />
             <p className="tld-team-description">
               <Link
-                className="emp-team-description"
+                className="tld-team-description"
                 to={`/leader/${project._id}/manage-team`}
               >
                 Here&lsquo;s everyone you are working with

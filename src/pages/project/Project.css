@@ -1,0 +1,169 @@
+.project-wrapper {
+  /* background-color: aqua; */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background-color: var(--background);
+}
+
+.project-container {
+  background-color: var(--white);
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 8px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-row {
+  width: 100%;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 5px;
+  justify-content: space-between;
+  color: var(--black);
+}
+
+.project-status {
+  font-weight: 500;
+}
+
+.project-status-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.completed {
+  color: #00ba00;
+}
+
+.inactive {
+  color: var(--red);
+}
+
+.active {
+  color: var(--blue);
+}
+
+.project-dates,
+.project-date {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.project-date {
+  gap: 5px;
+}
+
+.project-sub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-members img {
+  height: 50px;
+  width: 50px;
+}
+
+.project-description {
+  width: 50%;
+}
+
+.project-members {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-icon {
+  cursor: pointer;
+  color: var(--black);
+}
+
+.project-tasks-container {
+  flex-direction: column;
+}
+
+.project-tasks {
+  height: 250px;
+  overflow-y: auto;
+  /* border: 1px solid var(--gray); */
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 90%;
+}
+
+.project-task {
+  width: 90%;
+}
+
+.task-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-task-header,
+.project-attachment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.task-item {
+  list-style: none;
+}
+
+.pressable {
+  cursor: pointer;
+}
+
+.task-item-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.project-subtasks {
+  margin-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px;
+  align-items: center;
+}
+
+.sub-task-items {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.high {
+  color: red;
+}
+
+.medium {
+  color: orange;
+}
+
+.low {
+  color: green;
+}

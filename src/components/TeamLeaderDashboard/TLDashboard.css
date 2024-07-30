@@ -155,7 +155,8 @@
   font-size: 14px;
 }
 
-.tld-team-description {
+.tld-team-description,
+.tld-project-description {
   all: unset;
   background-color: var(--accent);
   color: var(--white);

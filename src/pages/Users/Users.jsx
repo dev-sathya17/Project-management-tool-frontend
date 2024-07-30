@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import "./Users.css";
 import { useState } from "react";
-import UserModal from "../../components/user modal/UserModal";
+import UserModal from "../../components/UserModal/UserModal";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Card from "../../components/card/Card";
 const Users = () => {

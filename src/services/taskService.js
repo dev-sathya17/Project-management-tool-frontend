@@ -9,6 +9,15 @@ const taskService = {
       status,
     });
   },
+  addTask: async (task, id) => {
+    return await protectedInstance.post(`/projects/${id}/tasks`, task);
+  },
+
+  deleteTask: async (projectid, taskId) => {
+    return await protectedInstance.delete(
+      `/projects/${projectid}/tasks/${taskId}`
+    );
+  },
 };
 
 export default taskService;

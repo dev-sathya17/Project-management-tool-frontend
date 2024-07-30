@@ -10,7 +10,7 @@ import { FaEdit } from "react-icons/fa";
 import { FaCamera } from "react-icons/fa";
 import { useRef, useState } from "react";
 import { useUser } from "../../contexts/UserContext";
-import UserModal from "../../components/user modal/UserModal";
+import UserModal from "../../components/profile modal/UserModal";
 import userService from "../../services/userService";
 import useStorage from "../../hooks/useStorage";
 
