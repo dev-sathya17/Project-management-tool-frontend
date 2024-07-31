@@ -82,7 +82,7 @@ const Profile = () => {
       console.log(key, value);
     }
 
-    userService.uploadImage(data).then((response) => {
+    userService.uploadImage(data, user._id).then((response) => {
       setUser(response.data.updatedUser);
       alert("Profile image updated successfully");
       setImageUrl(null);

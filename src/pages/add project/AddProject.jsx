@@ -6,7 +6,7 @@ const AddProject = () => {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
-    user: "",
+    member: "",
     budget: "",
     startDate: "",
     endDate: "",
@@ -41,7 +41,7 @@ const AddProject = () => {
           setFormData({
             title: "",
             description: "",
-            user: "",
+            member: "",
             budget: "",
             startDate: "",
             endDate: "",

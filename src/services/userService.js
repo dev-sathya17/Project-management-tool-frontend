@@ -79,9 +79,9 @@ const userService = {
     return await protectedInstance.get(`/users/unassigned/tasks`);
   },
 
-  uploadImage: async (data) => {
+  uploadImage: async (data, userId) => {
     console.log(data);
-    return await protectedInstance.put("/users", data, {
+    return await protectedInstance.put(`/users/${userId}`, data, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
