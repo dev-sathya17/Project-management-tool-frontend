@@ -229,7 +229,7 @@ const Project = () => {
                   <div className="project-member" key={member._id}>
                     <img
                       src={`https://pro-manager-tool.netlify.app/${
-                        member.image || "/uploaads/avatar.png"
+                        member.image || "/uploads/avatar.png"
                       }`}
                       alt={member.firstName}
                     />
