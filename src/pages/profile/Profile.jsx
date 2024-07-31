@@ -98,8 +98,9 @@ const Profile = () => {
           ) : (
             <img
               src={
-                user.image &&
-                `https://project-management-tool-backend-wzfm.onrender.com/${user.image}`
+                user.image
+                  ? `https://project-management-tool-backend-wzfm.onrender.com/${user.image}`
+                  : "https://img.freepik.com/premium-photo/graphic-designer-digital-avatar-generative-ai_934475-9292.jpg"
               }
               alt={user.firstName}
             />

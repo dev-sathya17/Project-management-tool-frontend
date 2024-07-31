@@ -78,7 +78,11 @@ const ProjectReport = ({ project }) => {
               </p>
               <div className="assigned-to">
                 <img
-                  src={task.assignedTo.image}
+                  src={
+                    task.assignedTo.image
+                      ? `https://project-management-tool-backend-wzfm.onrender.com/${task.assignedTo.image}`
+                      : "https://img.freepik.com/premium-photo/graphic-designer-digital-avatar-generative-ai_934475-9292.jpg"
+                  }
                   alt={task.assignedTo.firstName}
                   className="profile-pic"
                 />

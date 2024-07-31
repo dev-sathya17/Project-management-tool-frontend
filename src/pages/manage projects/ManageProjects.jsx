@@ -58,8 +58,12 @@ const ManageProjects = () => {
               {project.members.map((member, index) => (
                 <img
                   key={index}
-                  src={member.image}
-                  alt={member.name}
+                  src={
+                    member.image
+                      ? `https://project-management-tool-backend-wzfm.onrender.com/${member.image}`
+                      : "https://img.freepik.com/premium-photo/graphic-designer-digital-avatar-generative-ai_934475-9292.jpg"
+                  }
+                  alt={member.firstName}
                   className="member-image"
                 />
               ))}

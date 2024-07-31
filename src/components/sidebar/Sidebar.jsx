@@ -9,7 +9,11 @@ const Sidebar = ({ children, handleClick, handleProfileView }) => {
       <footer className="sidebar-footer">
         <div className="profile-sidebar-container">
           <img
-            src="https://img.freepik.com/premium-photo/graphic-designer-digital-avatar-generative-ai_934475-9292.jpg"
+            src={
+              user.image
+                ? `https://project-management-tool-backend-wzfm.onrender.com/${user.image}`
+                : "https://img.freepik.com/premium-photo/graphic-designer-digital-avatar-generative-ai_934475-9292.jpg"
+            }
             alt="Profile picture"
             className="profile"
             onClick={handleProfileView}
