@@ -88,12 +88,12 @@ const AddProject = () => {
           />
         </div>
         <div className="add-project-form-group">
-          <label htmlFor="user" className="add-project-label">
-            Assigned User
+          <label htmlFor="member" className="add-project-label">
+            Assigned member
           </label>
           <select
-            id="user"
-            name="user"
+            id="member"
+            name="member"
             className="add-project-select"
             value={formData.member}
             onChange={handleChange}
