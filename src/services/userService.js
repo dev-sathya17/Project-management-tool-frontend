@@ -46,7 +46,7 @@ const userService = {
 
   // Service to update user profile
   updateProfile: async (userData) => {
-    return await protectedInstance.put("/users", userData);
+    return await protectedInstance.put(`/users/${userData._id}`, userData);
   },
 
   // Service to fetch user progress
@@ -90,6 +90,10 @@ const userService = {
 
   activateUser: async (id) => {
     return await instance.get(`/users/activate/${id}`);
+  },
+
+  deleteUser: async (id) => {
+    return await protectedInstance.delete(`/users/${id}`);
   },
 };
 

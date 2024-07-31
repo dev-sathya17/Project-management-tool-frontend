@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import "./TaskModal.css";
-import { FaRegCalendarAlt, FaTasks, FaPaperclip } from "react-icons/fa";
+import { FaRegCalendarAlt, FaTasks } from "react-icons/fa";
 import userService from "../../services/userService";
 const TaskModal = ({ task, closeModal, type, addTask }) => {
+  const [unassignedUsers, setUnassignedUsers] = useState([]);
   const [newTask, setNewTask] = useState({
     title: "",
     description: "",
@@ -10,13 +11,15 @@ const TaskModal = ({ task, closeModal, type, addTask }) => {
     priority: "low",
     assignedTo: "",
   });
-  const [unassignedUsers, setUnassignedUsers] = useState([]);
 
   useEffect(() => {
     userService
       .fetchTaskUnassignedUsers()
       .then((response) => {
         setUnassignedUsers(response.data);
+        if (response.data.length === 1) {
+          setNewTask({ ...newTask, assignedTo: response.data[0]._id });
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -31,7 +34,6 @@ const TaskModal = ({ task, closeModal, type, addTask }) => {
           onClick={(e) => e.stopPropagation()}
         >
           <div className="task-modal-header">
-            {/* <h2 className="task-modal-title">{task.title}</h2> */}
             <input
               type="text"
               value={newTask.title}
@@ -46,8 +48,6 @@ const TaskModal = ({ task, closeModal, type, addTask }) => {
           </div>
           <div className="task-modal-body">
             <div className="task-modal-section">
-              {/* <h3>Description</h3> */}
-              {/* <p>{task.description}</p> */}
               <input
                 type="text"
                 value={newTask.description}
@@ -63,7 +63,6 @@ const TaskModal = ({ task, closeModal, type, addTask }) => {
                 id="members"
                 value={newTask.assignedTo}
                 onChange={(e) => {
-                  console.log(e.target.value);
                   setNewTask({ ...newTask, assignedTo: e.target.value });
                 }}
               >

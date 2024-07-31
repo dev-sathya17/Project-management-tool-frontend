@@ -59,6 +59,7 @@ const Project = () => {
   };
 
   const deleteTask = (task) => {
+    console.log(project);
     taskService
       .deleteTask(project._id, task._id)
       .then((res) => {

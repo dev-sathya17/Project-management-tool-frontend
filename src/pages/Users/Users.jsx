@@ -4,10 +4,11 @@ import { useState } from "react";
 import UserModal from "../../components/UserModal/UserModal";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Card from "../../components/card/Card";
+import userService from "../../services/userService";
 const Users = () => {
   const { data } = useLoaderData();
-
-  const [users, setUsers] = useState(data);
+  const { allUsers } = data;
+  const [users, setUsers] = useState(allUsers);
   const [searchTerm, setSearchTerm] = useState("");
   const [editingUser, setEditingUser] = useState(null);
 
@@ -22,16 +23,51 @@ const Users = () => {
   };
 
   const handleDelete = (userToDelete) => {
-    setUsers(users.filter((user) => user !== userToDelete));
+    const choice = confirm(
+      `Are you sure you want to delete ${userToDelete.firstName} ${userToDelete.lastName}`
+    );
+    if (choice) {
+      userService
+        .deleteUser(userToDelete._id)
+        .then((response) => {
+          if (response.status === 200) {
+            alert("User deleted successfully");
+            setUsers(users.filter((user) => user !== userToDelete));
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          alert("Failed to delete user");
+        });
+    }
   };
 
   const handleSave = (updatedUser) => {
-    setUsers(
-      users.map((user) =>
-        user.email === updatedUser.email ? updatedUser : user
-      )
-    );
-    setEditingUser(null);
+    const userToUpdate = {
+      firstName: updatedUser.firstName,
+      lastName: updatedUser.lastName,
+      email: updatedUser.email,
+      salaryPerMonth: updatedUser.salaryPerMonth,
+      mobile: updatedUser.mobile,
+      _id: updatedUser._id,
+    };
+    userService
+      .updateProfile(userToUpdate)
+      .then((response) => {
+        if (response.status === 200) {
+          alert("User updated successfully");
+          setUsers(
+            users.map((user) =>
+              user.email === updatedUser.email ? updatedUser : user
+            )
+          );
+          setEditingUser(false);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("Failed to update user");
+      });
   };
 
   return (

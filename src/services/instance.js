@@ -1,8 +1,8 @@
 import axios from "axios";
 
 // Defining the base URl
-const baseURL = "http://localhost:3000/api/v1";
-// "https://project-management-tool-backend-wzfm.onrender.com/api/v1";
+const baseURL =
+  "https://project-management-tool-backend-wzfm.onrender.com/api/v1";
 
 // Creating an axios instance
 const instance = axios.create({

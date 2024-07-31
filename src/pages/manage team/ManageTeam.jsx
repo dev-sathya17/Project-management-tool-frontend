@@ -46,7 +46,9 @@ const ManageTeam = () => {
   };
 
   const handleDelete = (userToDelete) => {
-    const choice = confirm("Are you sure you want to delete this user?");
+    const choice = confirm(
+      "Are you sure you want to remove this user from team?"
+    );
     if (choice) {
       projectService
         .removeMember(userToDelete._id, project._id)
@@ -74,12 +76,15 @@ const ManageTeam = () => {
   };
 
   const handleAdd = () => {
+    if (userToAdd === "select" || userToAdd === "") {
+      alert("Please select a user to add");
+      return;
+    }
     projectService
       .addMember(userToAdd, project._id)
       .then((response) => {
         if (response.status === 200) {
           alert("User added successfully");
-          const members = response.data.updatedProject.members;
           fetchData();
           setUserToAdd("");
         }
@@ -112,6 +117,7 @@ const ManageTeam = () => {
               value={userToAdd}
               onChange={(e) => setUserToAdd(e.target.value)}
             >
+              <option value="select">Select a user</option>
               {unassignedUsers.map((user, index) => (
                 <option value={user._id} key={index}>
                   {user.firstName + " " + user.lastName}
