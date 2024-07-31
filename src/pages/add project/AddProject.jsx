@@ -95,7 +95,7 @@ const AddProject = () => {
             id="user"
             name="user"
             className="add-project-select"
-            value={formData.user}
+            value={formData.member}
             onChange={handleChange}
             required
           >
