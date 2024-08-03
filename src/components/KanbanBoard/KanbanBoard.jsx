@@ -95,7 +95,7 @@ const KanbanBoard = ({ tasks, filter }) => {
             }
           })
           .catch((error) => {
-            console.log(error);
+            alert("Some Error occurred");
           });
         return;
       }

@@ -27,7 +27,6 @@ const Profile = () => {
 
   if (!user) {
     const storedUser = getValueFromStorage("user");
-    console.log(storedUser);
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
@@ -35,7 +34,6 @@ const Profile = () => {
 
   if (user) {
     user.image = user.image.replace("\\", "/");
-    console.log(user.image);
   }
 
   const fileInputRef = useRef(null);
@@ -63,7 +61,6 @@ const Profile = () => {
         setEditUser(null);
       })
       .catch((error) => {
-        console.log(error);
         alert("Failed to update profile");
         setEditUser(null);
       });
@@ -77,10 +74,6 @@ const Profile = () => {
 
     const data = new FormData();
     data.append("image", image);
-
-    for (let [key, value] of data.entries()) {
-      console.log(key, value);
-    }
 
     userService.uploadImage(data, user._id).then((response) => {
       setUser(response.data.updatedUser);

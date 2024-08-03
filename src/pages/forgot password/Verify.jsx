@@ -105,7 +105,7 @@ const Verify = () => {
         }
       })
       .catch((error) => {
-        console.log(error);
+        alert("Some Error occurred");
         setLoading(false);
         alert(error.response.data.error);
       });

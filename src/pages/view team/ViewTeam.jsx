@@ -1,10 +1,16 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Card from "../../components/card/Card";
 import { useState } from "react";
 
 const ViewTeam = () => {
   const { data } = useLoaderData();
+  const navigate = useNavigate();
+
+  if (!data) {
+    alert("You are not assigned to a project yet!");
+    navigate("/employee/dashboard");
+  }
 
   const { team } = data;
 

@@ -37,7 +37,7 @@ const ManageTeam = () => {
       })
       .catch((error) => {
         setLoading(false);
-        console.log(error);
+        alert("Some Error occurred");
       });
   };
 
@@ -61,7 +61,7 @@ const ManageTeam = () => {
           });
         })
         .catch((error) => {
-          console.log(error);
+          alert("Some Error occurred");
         });
     }
   };
@@ -90,7 +90,7 @@ const ManageTeam = () => {
         }
       })
       .catch((error) => {
-        console.log(error);
+        alert("Some Error occurred");
       });
   };
   let filteredUsers;

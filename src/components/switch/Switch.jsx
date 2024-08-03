@@ -10,7 +10,6 @@ const Switch = () => {
 
   if (!theme) {
     const storedTheme = getValueFromStorage("theme");
-    console.log(theme);
     if (storedTheme) {
       toggleTheme();
     }

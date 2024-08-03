@@ -59,7 +59,6 @@ const Project = () => {
   };
 
   const deleteTask = (task) => {
-    console.log(project);
     taskService
       .deleteTask(project._id, task._id)
       .then((res) => {
@@ -154,7 +153,6 @@ const Project = () => {
   };
 
   const addTask = (task) => {
-    console.log(task);
     taskService
       .addTask(task, project._id)
       .then((res) => {
@@ -228,7 +226,7 @@ const Project = () => {
                 {project.members.map((member) => (
                   <div className="project-member" key={member._id}>
                     <img
-                      src={`https://pro-manager-tool.netlify.app/${
+                      src={`https://project-management-tool-backend-wzfm.onrender.com/${
                         member.image || "/uploads/avatar.png"
                       }`}
                       alt={member.firstName}

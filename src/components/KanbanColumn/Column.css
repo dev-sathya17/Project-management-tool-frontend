@@ -7,6 +7,7 @@
   position: relative;
   width: 100%;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  width: 500px;
 }
 
 .column-title {
@@ -34,4 +35,16 @@
   overflow-y: scroll;
   border-radius: 10px;
   height: 92%;
+}
+
+@media screen and (max-width: 768px) {
+  .column-title {
+    font-size: 0.72em;
+  }
+  .badge {
+    font-size: 10px;
+    min-width: 10px;
+    margin: 5px;
+    padding: 2px 7px;
+  }
 }

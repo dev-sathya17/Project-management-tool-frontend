@@ -21,7 +21,7 @@ const AdminDashboard = () => {
           }
         })
         .catch((error) => {
-          console.log(error);
+          alert("Some Error occurred");
         });
     }
   };

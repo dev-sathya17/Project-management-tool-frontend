@@ -3,6 +3,11 @@ import Switch from "../switch/Switch";
 import "./Sidebar.css";
 const Sidebar = ({ children, handleClick, handleProfileView }) => {
   const { user } = useUser();
+
+  if (user) {
+    user.image = user.image.replace("\\", "/");
+  }
+
   return (
     <div className="sidebar-container">
       <main className="sidebar-main">{children}</main>

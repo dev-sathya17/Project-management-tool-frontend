@@ -59,7 +59,7 @@ const DashboardAdmin = () => {
           }
         })
         .catch((error) => {
-          console.log(error);
+          alert("Some Error occurred");
         });
 
       adminService
@@ -70,7 +70,7 @@ const DashboardAdmin = () => {
           }
         })
         .catch((error) => {
-          console.log(error);
+          alert("Some Error occurred");
         });
 
       adminService
@@ -85,7 +85,7 @@ const DashboardAdmin = () => {
           }
         })
         .catch((error) => {
-          console.log(error);
+          alert("Some Error occurred");
         });
 
       adminService
@@ -96,7 +96,7 @@ const DashboardAdmin = () => {
           }
         })
         .catch((error) => {
-          console.log(error);
+          alert("Some Error occurred");
         });
 
       adminService
@@ -108,7 +108,7 @@ const DashboardAdmin = () => {
           }
         })
         .catch((error) => {
-          console.log(error);
+          alert("Some Error occurred");
         });
 
       adminService
@@ -119,7 +119,7 @@ const DashboardAdmin = () => {
           }
         })
         .catch((error) => {
-          console.log(error);
+          alert("Some Error occurred");
         });
     }
   }, [user]);
@@ -144,7 +144,7 @@ const DashboardAdmin = () => {
         <div className={`adm-col adm-risk`}>
           <p className="risk-title">Risk</p>
           <h1 className="risk-value">{risk && risk.value}%</h1>
-          <p className="risk-description">{risk && risk.project}</p>
+          <p className="risk-description">{risk && risk.project.title}</p>
         </div>
       </div>
       <div className="adm-row row-2">

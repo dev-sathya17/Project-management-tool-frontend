@@ -9,7 +9,6 @@ const adminLoader = {
       const response = await adminService.getAllProjects();
       return response.data;
     } catch (error) {
-      console.log(error);
       return [];
     }
   },

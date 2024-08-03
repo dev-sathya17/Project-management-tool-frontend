@@ -47,7 +47,6 @@ const EmployeeDashboard = () => {
       userService
         .logout()
         .then((response) => {
-          console.log(response.data);
           if (response.status === 200) {
             alert("Logged out successfully");
             removeValueFromStorage("user");
@@ -55,7 +54,7 @@ const EmployeeDashboard = () => {
           }
         })
         .catch((error) => {
-          console.log(error);
+          alert("Some Error occurred");
         });
     }
   };

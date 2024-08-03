@@ -16,7 +16,7 @@ const Card = ({ user, onEdit, onDelete, type }) => {
     <div className="card">
       <img
         src={`https://project-management-tool-backend-wzfm.onrender.com/${
-          user.image || "avatar.png"
+          user.image || "/uploads/avatar.png"
         }`}
         alt={user.firstName}
         className="image"

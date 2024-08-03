@@ -57,7 +57,7 @@ const DashboardEmployee = () => {
           }
         })
         .catch((error) => {
-          console.log(error);
+          alert("Some Error occurred");
         });
       userService
         .fetchPendingTasks(user._id)
@@ -67,18 +67,22 @@ const DashboardEmployee = () => {
           }
         })
         .catch((error) => {
-          console.log(error);
+          alert("Some Error occurred");
         });
-      projectService
-        .getProjectPendingDuration(user.assignedTo)
-        .then((response) => {
-          if (response.status === 200) {
-            setDuration(response.data.duration);
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      if (user.assignedTo) {
+        projectService
+          .getProjectPendingDuration(user.assignedTo)
+          .then((response) => {
+            if (response.status === 200) {
+              setDuration(response.data.duration);
+            }
+          })
+          .catch((error) => {
+            alert("Some Error occurred");
+          });
+      } else {
+        setDuration(null);
+      }
       userService
         .fetchProductivity(user._id)
         .then((response) => {
@@ -87,7 +91,7 @@ const DashboardEmployee = () => {
           }
         })
         .catch((error) => {
-          console.log(error);
+          alert("Some Error occurred");
         });
       userService
         .fetchPerformance(user._id)
@@ -97,7 +101,7 @@ const DashboardEmployee = () => {
           }
         })
         .catch((error) => {
-          console.log(error);
+          alert("Some Error occurred");
         });
     }
   }, [user]);
@@ -170,7 +174,9 @@ const DashboardEmployee = () => {
             Pending Duration
           </p>
           <h3 className="emp-duration-value">
-            {duration && duration.toFixed(2)} month(s)
+            {duration
+              ? `${duration.toFixed(2)} month(s)`
+              : "You are not assigned yet."}{" "}
           </h3>
           <p className="emp-duration-description">
             {duration && duration.toFixed(2) < 1

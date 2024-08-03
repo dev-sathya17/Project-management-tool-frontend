@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./AddProject.css";
 import userService from "../../services/userService";
 import projectService from "../../services/projectService";
+import { useNavigate } from "react-router-dom";
 const AddProject = () => {
   const [formData, setFormData] = useState({
     title: "",
@@ -12,6 +13,7 @@ const AddProject = () => {
     endDate: "",
   });
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     userService
@@ -22,7 +24,7 @@ const AddProject = () => {
         }
       })
       .catch((error) => {
-        console.log(error);
+        alert("Some Error occurred");
       });
   });
 
@@ -46,6 +48,7 @@ const AddProject = () => {
             startDate: "",
             endDate: "",
           });
+          navigate("/leader/dashboard");
         } else {
           alert("Failed to add project. Please try again.");
         }
@@ -53,7 +56,6 @@ const AddProject = () => {
       .catch((error) => {
         console.error(error);
       });
-    console.log("Form data submitted:", formData);
   };
 
   return (
