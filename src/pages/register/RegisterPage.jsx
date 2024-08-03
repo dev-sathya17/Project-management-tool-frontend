@@ -62,8 +62,8 @@ const RegisterPage = () => {
       userService
         .registerUser(values)
         .then((response) => {
+          alert(response.data.message);
           if (response.status === 201) {
-            alert(response.data.message);
             formik.resetForm();
           }
         })
