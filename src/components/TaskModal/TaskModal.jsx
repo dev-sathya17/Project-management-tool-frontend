@@ -22,7 +22,7 @@ const TaskModal = ({ task, closeModal, type, addTask }) => {
         }
       })
       .catch((error) => {
-        alert("Some Error occurred");
+        console.log(error);
       });
   }, []);
 

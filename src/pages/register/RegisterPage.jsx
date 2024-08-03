@@ -69,7 +69,7 @@ const RegisterPage = () => {
         })
         .catch((error) => {
           console.log(error.response);
-          alert("Registration failed. Please try again.");
+          alert(error.response.data.message);
         });
       setSubmitting(false);
     },

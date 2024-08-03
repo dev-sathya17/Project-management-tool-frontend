@@ -57,7 +57,7 @@ const LoginPage = () => {
           }
         })
         .catch((error) => {
-          alert("Some Error occurred");
+          console.log(error);
           alert(error.response.data.message);
         });
     },

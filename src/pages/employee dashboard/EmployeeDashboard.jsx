@@ -54,7 +54,7 @@ const EmployeeDashboard = () => {
           }
         })
         .catch((error) => {
-          alert("Some Error occurred");
+          console.log(error);
         });
     }
   };

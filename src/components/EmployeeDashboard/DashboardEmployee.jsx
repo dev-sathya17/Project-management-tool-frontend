@@ -57,7 +57,7 @@ const DashboardEmployee = () => {
           }
         })
         .catch((error) => {
-          alert("Some Error occurred");
+          console.log(error);
         });
       userService
         .fetchPendingTasks(user._id)
@@ -67,7 +67,7 @@ const DashboardEmployee = () => {
           }
         })
         .catch((error) => {
-          alert("Some Error occurred");
+          console.log(error);
         });
       if (user.assignedTo) {
         projectService
@@ -78,7 +78,7 @@ const DashboardEmployee = () => {
             }
           })
           .catch((error) => {
-            alert("Some Error occurred");
+            console.log(error);
           });
       } else {
         setDuration(null);
@@ -91,7 +91,7 @@ const DashboardEmployee = () => {
           }
         })
         .catch((error) => {
-          alert("Some Error occurred");
+          console.log(error);
         });
       userService
         .fetchPerformance(user._id)
@@ -101,7 +101,7 @@ const DashboardEmployee = () => {
           }
         })
         .catch((error) => {
-          alert("Some Error occurred");
+          console.log(error);
         });
     }
   }, [user]);

@@ -52,7 +52,7 @@ const ForgotPassword = () => {
             onChange={handleChange}
             placeholder="abcd@email.com:"
             id="email"
-            className={error ? "fp-input-error" : "fp-input"}
+            className="fp-input"
           />
         </div>
         {error ? (

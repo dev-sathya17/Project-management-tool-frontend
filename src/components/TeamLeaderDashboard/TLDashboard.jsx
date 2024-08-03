@@ -44,7 +44,7 @@ const TLDashboard = ({ project }) => {
         }
       })
       .catch((error) => {
-        alert("Some Error occurred");
+        console.log(error);
       });
     projectService
       .getPendingTasks(project._id)
@@ -54,7 +54,7 @@ const TLDashboard = ({ project }) => {
         }
       })
       .catch((error) => {
-        alert("Some Error occurred");
+        console.log(error);
       });
     projectService
       .getProjectProductivity(project._id)
@@ -64,7 +64,7 @@ const TLDashboard = ({ project }) => {
         }
       })
       .catch((error) => {
-        alert("Some Error occurred");
+        console.log(error);
       });
     projectService
       .getProjectPendingDuration(project._id)
@@ -74,7 +74,7 @@ const TLDashboard = ({ project }) => {
         }
       })
       .catch((error) => {
-        alert("Some Error occurred");
+        console.log(error);
       });
     projectService
       .getProjectRisks(project._id)
@@ -87,7 +87,7 @@ const TLDashboard = ({ project }) => {
         }
       })
       .catch((error) => {
-        alert("Some Error occurred");
+        console.log(error);
       });
   }, [project]);
 

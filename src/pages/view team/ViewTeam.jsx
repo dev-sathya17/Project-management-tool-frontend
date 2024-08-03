@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const ViewTeam = () => {
   const { data } = useLoaderData();
+  console.log(data);
   const navigate = useNavigate();
 
   if (!data) {

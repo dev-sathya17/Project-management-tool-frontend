@@ -15,7 +15,7 @@ const ActivateUser = () => {
         }
       })
       .catch((error) => {
-        alert("Some Error occurred");
+        console.log(error);
         alert("Failed to activate user. Please try again.");
       });
   });

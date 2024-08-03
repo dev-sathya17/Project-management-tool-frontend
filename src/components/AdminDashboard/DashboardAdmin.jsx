@@ -59,7 +59,7 @@ const DashboardAdmin = () => {
           }
         })
         .catch((error) => {
-          alert("Some Error occurred");
+          console.log(error);
         });
 
       adminService
@@ -70,7 +70,7 @@ const DashboardAdmin = () => {
           }
         })
         .catch((error) => {
-          alert("Some Error occurred");
+          console.log(error);
         });
 
       adminService
@@ -85,7 +85,7 @@ const DashboardAdmin = () => {
           }
         })
         .catch((error) => {
-          alert("Some Error occurred");
+          console.log(error);
         });
 
       adminService
@@ -96,7 +96,7 @@ const DashboardAdmin = () => {
           }
         })
         .catch((error) => {
-          alert("Some Error occurred");
+          console.log(error);
         });
 
       adminService
@@ -108,7 +108,7 @@ const DashboardAdmin = () => {
           }
         })
         .catch((error) => {
-          alert("Some Error occurred");
+          console.log(error);
         });
 
       adminService
@@ -119,7 +119,7 @@ const DashboardAdmin = () => {
           }
         })
         .catch((error) => {
-          alert("Some Error occurred");
+          console.log(error);
         });
     }
   }, [user]);
